@@ -177,3 +177,260 @@ Used widely in:
 ---
 
 📌 *These notes are suitable for beginners and can be directly used in a GitHub repository.*
+Date 18 March 2026
+How a Computer Works (Based on My Notes)
+1. Basic Idea
+
+A computer executes a sequence of instructions stored in memory.
+
+These instructions tell the computer:
+
+what to do
+
+in what order
+
+on which data
+
+2. Main Components of a Computer
+🔹 1. Memory
+
+Stores:
+
+Data (numbers, inputs)
+
+Instructions (program code)
+
+Acts like a storage area
+
+🔹 2. Arithmetic Logic Unit (ALU)
+
+Performs operations such as:
+
+Arithmetic → +, −, ×, ÷
+
+Logic → comparisons (>, <, ==)
+
+👉 Example:
+
+Adding two numbers
+
+Checking if a guess is correct
+
+🔹 3. Control Unit
+
+Directs the entire process
+
+Decides:
+
+which instruction to execute
+
+when to execute
+
+👉 It acts like a manager
+
+3. Program Execution Process
+Step-by-step flow:
+
+Instruction stored in memory
+
+Control unit reads instruction
+
+Instruction sent to ALU
+
+ALU performs operation
+
+Result stored back in memory or output
+
+4. Program Counter (Very Important)
+
+Special component in control unit
+
+Keeps track of:
+👉 “Which instruction to execute next”
+
+How it works:
+
+Starts from first instruction
+
+After execution → moves to next
+
+Continues step-by-step
+
+👉 This is why programs run in sequence
+
+5. Types of Primitive Instructions
+
+Computer understands only simple instructions:
+
+Arithmetic operations
+
+Logical comparisons
+
+Moving data (load/store)
+
+👉 Complex programs = combination of these simple steps
+
+6. Stored Program Concept
+
+A program is stored in memory
+
+Executed step-by-step
+
+👉 This means:
+
+Computer doesn’t think—it just follows instructions
+
+🔁 Connecting This to the Square Root (Guessing) Example
+
+Now let’s connect this to your example:
+
+Problem:
+
+Find √16 using guessing
+
+Step 1: Initial Guess
+
+Let:
+
+x = 16
+
+guess = 3
+
+Step 2: Check Guess
+
+Computer does:
+
+👉 guess × guess = 9
+
+Compare with 16
+
+Result → not correct
+
+Step 3: Improve Guess
+
+Use formula:
+
+👉 new_guess = (guess + x/guess) / 2
+
+This improves the approximation.
+
+Step 4: Repeat (Loop)
+
+Computer repeats:
+
+Take guess
+
+Calculate new guess
+
+Check error
+
+Continue until close enough
+
+7. How Computer Executes This (Link to Diagram)
+
+Let’s connect each step to components:
+
+🔹 Memory
+
+Stores:
+
+x = 16
+
+guess = 3
+
+instructions (formula, loop)
+
+🔹 Control Unit
+
+Reads instruction:
+
+“calculate guess × guess”
+
+“compare with 16”
+
+“update guess”
+
+🔹 ALU
+
+Performs:
+
+multiplication → guess²
+
+division → x/guess
+
+addition → guess + (x/guess)
+
+comparison
+
+🔹 Program Counter
+
+Controls flow:
+
+Step 1 → initialize guess
+
+Step 2 → compute square
+
+Step 3 → check condition
+
+Step 4 → update guess
+
+Step 5 → repeat
+
+8. Full Process (Combined View)
+
+Program is stored in memory
+
+Control unit fetches instruction
+
+ALU performs calculation
+
+Result stored
+
+Program counter moves forward
+
+Loop continues until condition satisfied
+
+9. Key Insight
+
+👉 Computer does NOT directly know √16 = 4
+
+Instead:
+
+It guesses
+
+Improves guess step-by-step
+
+Uses simple operations repeatedly
+
+10. Why This Is Important
+
+This concept teaches:
+
+How programs execute step-by-step
+
+How loops work
+
+How approximation works
+
+How logic + math combine
+
+💻 Simple Python Version
+x = 16
+guess = 3
+
+while abs(guess*guess - x) > 0.01:
+    guess = (guess + x/guess) / 2
+
+print(guess)
+🔥 Final Understanding
+
+👉 Your diagram is not just theory
+
+It explains:
+
+how Python runs
+
+how algorithms work
+
+how computers “think”
+
