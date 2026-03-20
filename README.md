@@ -433,4 +433,82 @@ how Python runs
 how algorithms work
 
 how computers “think”
+Date 20 march 2026
+1. What is a Python Program?
+
+👉 A program is simply:
+
+A set of instructions written to make the computer do something.
+
+Example:
+x=5
+y=6
+print(x+y)
+...11
+
+This is a Python program (even 1 line counts).
+
+🔹 Think like this:
+
+You → give instructions
+
+Computer → follows them step by step
+
+🧾 2. What are Commands?
+
+👉 A command is a single instruction inside a program.
+
+Example:
+x=5
+y=6
+print(x+y)
+
+
+Each line = a command
+
+🔹 Types of commands:
+
+Output → print()
+
+Assignment → x = 5
+
+Calculation → x + 2
+
+🧠 3. What is an Interpreter?
+
+This is the MOST IMPORTANT concept.
+
+👉 Python uses an interpreter, not a compiler.
+
+Definition:
+
+Interpreter = program that reads your code and executes it line-by-line.
+
+How it works:
+
+You write:
+
+print(5 + 2)
+
+Interpreter does:
+
+Reads line
+
+Understands it
+
+Executes it
+
+Shows result
+
+👉 Output:
+
+7
+🔥 Key point:
+
+If there is an error:
+
+Interpreter stops immediately
+
+Shows error
+
 
