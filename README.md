@@ -511,4 +511,39 @@ Interpreter stops immediately
 
 Shows error
 
+4. What is a Shell?
+
+👉 Shell = place where you directly talk to Python
+
+Also called:
+
+Python shell
+
+Interactive mode
+
+Example:
+
+You open Python and type:
+
+>>> 5 + 3
+
+👉 Output:
+
+8
+🔹 Why called “interactive”?
+
+Because:
+
+You type → get instant answer
+
+No need to save file
+
+🧾 5. Difference: Shell vs Program File
+Shell (Interactive)
+
+One line at a time
+
+Immediate result
+
+Good for testing
 
