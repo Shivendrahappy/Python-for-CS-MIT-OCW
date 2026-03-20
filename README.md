@@ -1,4 +1,4 @@
-#MITOCW6.0001  fall 2016  Python-for-CS-MIT-OCW
+#MITOCW6.0001  fall 2016  Python-for-CS-MIT-OCW 6.00001 Fall 2015,
 Guttag, John. Introduction to Computation and Programming Using Python: With Application to Understanding Data, Second Edition. MIT Press, 2016 und Proff. Ana Bell MITOCW videos and lecture slides. 
 Chapter 1- Getting started
 # MIT OCW – Introduction to Python
