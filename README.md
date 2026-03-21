@@ -583,14 +583,9 @@ Command	Step in recipe
 Interpreter	Chef
 Shell	Talking directly to chef
 Output	Final dish
-⚠️ Why you felt confused earlier
 
-Because:
 
-You were mixing concepts + syntax + fatigue
-Brain didn’t separate layers
-
-Now remember:
+ remember:
 
 👉 Program = instructions
 👉 Commands = steps
