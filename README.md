@@ -637,4 +637,20 @@ y = 3.7
 print(int(y))     # 3
 
 print(str(10))    # "10"
+Important concept (VERY IMPORTANT)
+
+Python does NOT always convert automatically.
+
+❌ This gives error:
+5 + "3"
+
+👉 because:
+
+int + string ❌
+✅ Fix using conversion:
+5 + int("3")
+
+👉 Output:
+
+8
 
