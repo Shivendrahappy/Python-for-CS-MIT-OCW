@@ -630,4 +630,11 @@ type(5)      # int
 type(3.0)    # float
 type(True)   # bool
 type(None)   # NoneType
+x = 5
+print(float(x))   # 5.0
+
+y = 3.7
+print(int(y))     # 3
+
+print(str(10))    # "10"
 
