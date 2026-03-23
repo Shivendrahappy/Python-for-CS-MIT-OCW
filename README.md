@@ -592,3 +592,42 @@ Output	Final dish
 👉 Interpreter = executor
 👉 Shell = direct interactio
 
+DATE 23 MARCH 2026
+
+(Scalar Objects — full meaning)
+🔴 Core idea:
+
+Scalar objects = simple values (cannot be broken further)
+
+🔹 Types from your slide
+1️⃣ int (integers)
+Whole numbers
+Examples:
+5
+-2
+100
+2️⃣ float (real numbers)
+Numbers with decimal
+3.14
+2.0
+-0.5
+3️⃣ bool (Boolean)
+Only 2 values:
+True
+False
+4️⃣ NoneType
+Special value:
+None
+
+👉 Means: “no value / empty”
+
+🔹 Important line (from slide)
+
+type() tells type of object
+
+Example:
+type(5)      # int
+type(3.0)    # float
+type(True)   # bool
+type(None)   # NoneType
+
