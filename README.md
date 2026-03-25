@@ -654,3 +654,23 @@ int + string ❌
 
 8
 
+
+
+March -25- 2026
+1. “Why give names to values?”
+
+👉 Answer:
+
+To store values and reuse them easily
+
+Instead of writing numbers again and again, we use variables (names).
+
+Example from your notes:
+pi = 3.14159
+radius = 2.2
+area = pi * (radius ** 2)
+
+👉 Meaning:
+
+pi, radius, and area are variables
+They store values
