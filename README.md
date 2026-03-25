@@ -761,3 +761,62 @@ Meaning (1 line):
 🔥 Key idea:
 
 “=” in Python means assignment, not equality
+1. “Changing bindings of variables”
+
+👉 Big words, simple meaning:
+
+Variables can change their value
+
+Example:
+radius = 2.2
+radius = radius + 1
+
+👉 Now:
+
+old radius = 2.2
+new radius = 3.2
+🔴 2. Values are stored in memory
+
+You drew boxes like:
+
+pi → 3.14
+radius → 2.2
+area → 15.19
+
+👉 Meaning:
+
+Variables are just names pointing to values in memory
+
+🔴 3. VERY IMPORTANT POINT
+
+“area does not change automatically”
+
+Example:
+pi = 3.14
+radius = 2.2
+area = pi * radius**2
+
+👉 Now change radius:
+
+radius = radius + 1
+
+👉 Question:
+Will area change?
+
+👉 ❌ NO
+
+🔥 Why?
+
+Because:
+
+Python already calculated area once and stored it
+
+🟢 To update area:
+area = pi * radius**2
+
+👉 You must calculate again
+
+🧠 One-line summary (IMPORTANT)
+
+Variables change
+But computed values don’t update automatically
