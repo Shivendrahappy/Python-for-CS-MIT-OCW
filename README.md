@@ -758,3 +758,6 @@ radius = radius + 1
 Meaning (1 line):
 
 👉 “increase radius by 1”
+🔥 Key idea:
+
+“=” in Python means assignment, not equality
