@@ -731,3 +731,30 @@ x + 1 = 5 + 1 = 6
 👉 now assign:
 
 x = 6
+3. Assignment (=)
+
+Your note:
+
+“expression on right evaluated to a value”
+
+👉 Meaning:
+
+radius = radius + 1
+
+Step-by-step:
+
+Take current radius
+Add 1
+Store new value in radius
+Example 2 (this new one)
+radius = radius + 1
+
+👉 Here:
+
+Python takes OLD value of radius
+adds 1
+stores NEW value back in radius
+radius = radius + 1
+Meaning (1 line):
+
+👉 “increase radius by 1”
