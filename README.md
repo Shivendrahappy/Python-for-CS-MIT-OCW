@@ -699,3 +699,35 @@ radius ** 2
 👉 Means:
 
 radius × radius
+2. “Programming vs Math”
+
+👉 Very important difference:
+
+In Math:
+x = x + 1 ❌ (wrong)
+In Programming:
+x = x + 1 ✅
+
+👉 Meaning:
+
+Take old value of x → add 1 → store back in x
+What does x = x + 1 mean?
+
+👉 It means:
+
+Take the current value of x, add 1, and store it back into x
+
+🔴 Step-by-step example
+x = 5
+x = x + 1
+print(x)
+What happens:
+x = 5
+👉 x now holds value 5
+x = x + 1
+👉 right side first:
+x + 1 = 5 + 1 = 6
+
+👉 now assign:
+
+x = 6
