@@ -674,3 +674,28 @@ area = pi * (radius ** 2)
 
 pi, radius, and area are variables
 They store values
+How to TYPE * on keyboard
+
+👉 Very easy:
+
+Press Shift + 8
+
+That gives: *
+
+⚠️ Important note
+Symbol	Meaning
+*	multiply
+**	power
+ 	** means POWER (square)
+
+👉 In math:
+
+r²
+
+👉 In Python:
+
+radius ** 2
+
+👉 Means:
+
+radius × radius
