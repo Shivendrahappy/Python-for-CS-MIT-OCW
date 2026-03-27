@@ -905,3 +905,69 @@ print(x + 2)
 
 - input() → string
 - int() → converts to number
+🔹 Print (Output)
+x = 1
+print(x)
+🔹 Using print with text and variables
+Method 1 (Using comma ,)
+x = 5
+print("My fav number is", x)
+
+Output:
+
+My fav number is 5
+
+✔ No conversion needed
+
+Method 2 (Using +)
+x = 5
+print("My fav number is " + str(x))
+
+Output:
+
+My fav number is 5
+
+✔ Requires conversion using str()
+
+🔹 What is x_str (Important)
+x = 5
+x_str = str(x)
+
+👉 x_str is the string version of x
+
+x = 5 → number
+x_str = "5" → text
+
+Used when combining with strings:
+
+print("My fav number is " + x_str)
+🔹 Input (User Input)
+text = input("Type anything: ")
+print(5 * text)
+
+If user types hi:
+
+Output:
+
+hihihihihi
+🔹 Input with Numbers (Important ⚠️)
+num = input("Type a number: ")
+print(5 * num)
+
+If user types 2:
+
+Output:
+
+22222   (string repetition)
+✔ Correct Way (Convert to integer)
+num = int(input("Type a number: "))
+print(5 * num)
+
+Output:
+
+10
+🧠 Key Concepts (Very Important)
+input() → always returns string
+str() → converts number → string
+int() → converts string → number
+- 
