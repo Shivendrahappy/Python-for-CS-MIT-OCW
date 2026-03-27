@@ -820,3 +820,88 @@ area = pi * radius**2
 
 Variables change
 But computed values don’t update automatically
+
+
+
+Date 27 March 2026
+# Lecture 2 – Strings, Input & Output
+
+## Strings
+- Strings are sequences of characters
+- Can include letters, digits, spaces, special characters
+- Written inside quotes: " " or ' '
+
+Example:
+hi = "Hello there"
+name = "Ana"
+
+---
+
+## String Concatenation
+Combine strings using +
+
+greet = hi + name
+print(greet)
+
+Output:
+Hello thereAna
+
+Add space manually:
+
+greet = hi + " " + name
+print(greet)
+
+Output:
+Hello there Ana
+
+---
+
+## String Operations
+
+Repeat string using *
+
+silly = hi + " " + name * 3
+print(silly)
+
+Output:
+Hello there AnaAnaAna
+
+---
+
+## Print
+
+print() is used to display output
+
+x = 1
+print(x)
+
+---
+
+## Input
+
+input() takes user input (always as string)
+
+text = input("Type anything: ")
+print("You typed:", text)
+
+---
+
+## x_str (Important)
+
+x_str = input("Enter number: ")
+
+- input() always gives STRING
+- So x_str stores text, not number
+
+Convert to integer:
+
+x = int(x_str)
+
+print(x + 2)
+
+---
+
+## Key Idea
+
+- input() → string
+- int() → converts to number
