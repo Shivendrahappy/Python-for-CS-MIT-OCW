@@ -1022,3 +1022,26 @@ print(5 * num)
 
 "text" → repeat
 number → multip
+Direct Value vs Input (Important Point)
+🟢 Direct Value (No input())
+num = 4
+print(5 * num)
+
+👉 Here:
+
+Value 4 is already given
+It is already a number (int)
+✅ No need to use int()
+🔴 Input Case (Needs int())
+num = int(input("type a number"))
+print(5 * num)
+
+👉 Here:
+
+User gives value
+Python treats input as string
+👉 So we convert using int()
+🎯 Final Understanding
+
+If value is already given → no int() needed
+If value comes from input() → use int() for math
