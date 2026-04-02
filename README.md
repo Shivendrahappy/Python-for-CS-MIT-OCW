@@ -1045,3 +1045,4 @@ Python treats input as string
 
 If value is already given → no int() needed
 If value comes from input() → use int() for math
+Done 
