@@ -945,29 +945,80 @@ print("My fav number is " + x_str)
 text = input("Type anything: ")
 print(5 * text)
 
-If user types hi:
+DATE  2 April 2026
+Lecture 2 – Input, String, and Numbers (Clean Notes)
+🧠 Basic Rule
+input() → gives string (text)
+int(input()) → gives number (for math)
+🔴 Case 1: String (No int)
 
-Output:
+Use when:
 
+Working with text
+Repeating text
+✅ Example:
+text = input("type anything")
+print(5 * text)
+🔹 Input:
+hi
+🔹 Output:
 hihihihihi
-🔹 Input with Numbers (Important ⚠️)
-num = input("Type a number: ")
+
+👉 Because text is string, so it repeats
+
+🔵 Case 2: Number (Use int)
+
+Use when:
+
+Doing calculation / math
+✅ Example:
+num = int(input("type a number"))
+print(5 * num)
+🔹 Input:
+4
+🔹 Output:
+20
+
+👉 Because num is integer, so it multiplies
+
+⚠️ Important Difference
+input("type a number")
+
+👉 Only shows message → user types value
+
+int(input("type a number"))
+
+👉 Takes input → converts to number
+
+🔴 Wrong Example (Very Important)
+num = input("type a number")
+print(5 * num)
+Input:
+4
+Output:
+44444
+
+👉 Because it's treated as string, not number
+
+🟡 No Input Case (Direct Value)
+num = 4
 print(5 * num)
 
-If user types 2:
+👉 Output:
 
-Output:
-
-22222   (string repetition)
-✔ Correct Way (Convert to integer)
-num = int(input("Type a number: "))
+20
+🎯 Final Rule (Remember Forever)
+Text → use input()
+Math → use int(input())
+Fixed value → no input needed
+🔥 Your Practice Examples (Correct)
+✔ Example 1 (String)
+text = input("type anything")
+print(5 * text)
+✔ Example 2 (Number)
+num = int(input("type a number"))
 print(5 * num)
+🧠 One-Line Memory
 
-Output:
-
-10
-🧠 Key Concepts (Very Important)
-input() → always returns string
-str() → converts number → string
-int() → converts string → number
-- 
+"text" → repeat
+number → multip
