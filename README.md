@@ -1130,4 +1130,45 @@ else:
 🧠 Final Memory
 
 Compare → True/False → use in if → program decides flow
+Why indentation (space) suddenly appeared?
+
+👉 Earlier (your previous programs):
+
+print(5 * 3)
+
+There was only one line
+➡️ No decision, no block
+➡️ So no indentation needed
+
+🔴 Now (with if)
+x = 5
+if x > 3:
+    print("x is greater than 3")
+
+👉 Here:
+
+if creates a block (a group of code)
+
+Python must know:
+
+“Which lines belong to this if?”
+
+👉 That’s why it uses indentation (space)
+
+❌ Without indentation
+x = 5
+if x > 3:
+print("x is greater than 3")
+
+👉 Python gets confused:
+
+“Is this inside if or outside?”
+
+👉 So it gives error
+
+🎯 Simple understanding
+Situation	Need indentation?
+Simple line	❌ No
+if / else	✅ Yes
+loops (later)	✅ Yes
 
