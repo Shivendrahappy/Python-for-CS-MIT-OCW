@@ -1046,3 +1046,84 @@ Python treats input as string
 If value is already given → no int() needed
 If value comes from input() → use int() for math
 Done 
+8 April 2026
+Branching & Logic (MIT OCW)
+🔹 1. Comparison Operators
+
+Used to compare two values → result is True / False
+
+Operator	Meaning
+>	greater than
+<	less than
+>=	greater than or equal
+<=	less than or equal
+==	equal to
+!=	not equal to
+🔹 2. Logical Operators
+
+Used with True / False values
+
+not a → reverses value
+a and b → True if both are True
+a or b → True if at least one is True
+🔹 3. Truth Table
+A	B	A and B	A or B
+True	True	True	True
+True	False	False	True
+False	True	False	True
+False	False	False	False
+🔹 4. Type Comparison
+Same type → valid
+"a" > "b" ✔
+Different type → error
+"a" > 5 ❌
+🔹 5. Control Flow (Decision Making)
+✅ if
+x = 5
+if x > 3:
+    print("x is greater than 3")
+✅ if-else
+x = 2
+if x % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+✅ if-elif-else
+x = 0
+if x > 0:
+    print("Positive")
+elif x < 0:
+    print("Negative")
+else:
+    print("Zero")
+🔹 6. Logical Operators in Code
+age = 25
+
+if age >= 18 and age <= 60:
+    print("Eligible")
+else:
+    print("Not eligible")
+🔹 7. Key Idea
+Conditions return True / False
+Logical operators combine conditions
+Control flow decides program path
+🔹 8. Minimal Practice
+# Even or Odd
+n = int(input("Enter number: "))
+if n % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+# Compare two numbers
+a = int(input())
+b = int(input())
+
+if a > b:
+    print("a is greater")
+elif a < b:
+    print("b is greater")
+else:
+    print("Equal")
+🧠 Final Memory
+
+Compare → True/False → use in if → program decides flow
