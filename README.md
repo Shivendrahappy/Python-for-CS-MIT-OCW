@@ -1046,6 +1046,9 @@ Python treats input as string
 If value is already given → no int() needed
 If value comes from input() → use int() for math
 Done 
+
+
+
 8 April 2026
 Branching & Logic (MIT OCW)
 🔹 1. Comparison Operators
@@ -1127,3 +1130,4 @@ else:
 🧠 Final Memory
 
 Compare → True/False → use in if → program decides flow
+
