@@ -1171,4 +1171,45 @@ Situation	Need indentation?
 Simple line	❌ No
 if / else	✅ Yes
 loops (later)	✅ Yes
+Branching – if / else / elif (Final Notes)
+🔹 Example 1 – if / else
+x = 2
+if x > 3:
+    print("x is greater than 3")
+else:
+    print("x is not greater than 3")
+🧠 Explanation
+x = 2
+Check: 2 > 3 → False
+So if block is skipped
+else block runs
+
+👉 Output:
+
+x is not greater than 3
+🔹 Example 2 – if / elif / else
+x = 0
+
+if x > 0:
+    print("Positive")
+elif x < 0:
+    print("Negative")
+else:
+    print("Zero")
+🧠 Explanation
+x = 0
+Check 1: x > 0 → False
+Check 2: x < 0 → False
+Both conditions fail → else runs
+
+👉 Output:
+
+Zero
+🔹 Key Idea
+if → first condition
+elif → checked only if if is False
+else → runs if all conditions are False
+🧠 One-Line Memory
+
+if fails → check elif → if all fail → else runs
 
