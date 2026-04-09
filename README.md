@@ -1308,3 +1308,294 @@ Repeats if needed
 if / elif / else → decisions
 while → repetition
 
+THIS MIT code
+
+Your code:
+
+x = float(input("enter a number for x: "))
+y = float(input("enter a number for y: "))
+
+if x == y:
+    print("x and y are equal")
+    if y != 0:
+        print("therefore, x/y is", x/y)
+
+elif x < y:
+    print("x is smaller")
+
+else:
+    print("y is smaller")
+🧠 Step-by-step meaning
+✅ Step 1 → Input
+
+You give:
+
+x = 2
+y = 5
+✅ Step 2 → First condition
+if x == y:
+
+👉 2 == 5 → ❌ False
+👉 So skip this whole block
+
+❗ IMPORTANT (your main confusion)
+
+This part:
+
+if y != 0:
+    print("therefore, x/y is", x/y)
+
+👉 ONLY runs if x == y is TRUE
+
+👉 But in your case:
+
+x ≠ y
+So this NEVER runs
+
+👉 That’s why division is not happening
+
+✅ Step 3 → Next condition
+elif x < y:
+
+👉 2 < 5 → ✅ True
+
+👉 So:
+
+print("x is smaller")
+
+✔ Output:
+
+x is smaller
+🔴 Why y != 0 is written?
+
+Very important concept:
+
+👉 Division:
+
+x / y
+
+❌ If y = 0 → ERROR (cannot divide by zero)
+
+So they check:
+
+if y != 0:
+
+👉 Means:
+"Only divide if y is NOT zero"
+
+🎯 Simple summary
+x == y → equal case
+inside that → safe division
+x < y → x smaller
+else → y smaller
+🔥 Now VERY SIMPLE VERSION (you should code)
+x = int(input("enter x: "))
+y = int(input("enter y: "))
+
+if x < y:
+    print("x is smaller")
+else:
+    print("y is smaller or equal")
+
+👉 This is enough for you now
+
+🔵 Now: WHILE LOOP (simple)
+✅ Basic example
+n = 0
+
+while n < 5:
+    print(n)
+    n = n + 1
+Output:
+0
+1
+2
+3
+4
+🧠 Meaning
+Start n = 0
+Check: n < 5
+Print
+Increase n
+Repeat
+🔵 Control Flow (simple meaning)
+
+👉 Control flow = how program moves
+
+Example:
+x = 2
+
+if x > 3:
+    print("greater")
+else:
+    print("not greater")
+
+👉 Program checks condition
+👉 Then decides path
+
+🔥 What YOU do now (final task)
+1. Run this (MIT simplified)
+x = int(input("enter x: "))
+y = int(input("enter y: "))
+
+if x == y:
+    print("equal")
+elif x < y:
+    print("x smaller")
+else:
+    print("y smaller")
+2. Run this loop
+n = 0
+
+while n < 3:
+    print(n)
+    n = n + 1
+🔴 Final advice (important)
+
+You got stuck because:
+👉 MIT code has nested if (inside if)
+
+You are still at:
+👉 basic if-else level
+
+✔ So:
+
+Understand structure, not every detail
+Use simpler version for practice
+
+You’re doing correct — just don’t try to understand everything in one go.
+
+Now code these 2 and stop session 👍
+
+Explain y  step And the second code n =0
+
+Good — let’s slow it down and explain only the 2 things you asked very clearly.
+
+🔴 1. y step (this part)
+
+From MIT code:
+
+if y != 0:
+   
+Got cut exp8again 
+
+Got it 👍 let me explain cleanly again without cut.
+
+🔴 1. What is this y step?
+
+Code:
+
+if y != 0:
+    print("therefore, x/y is", x/y)
+🧠 Meaning step-by-step
+
+👉 y != 0 means:
+
+"y is NOT equal to 0"
+❗ Why this check?
+
+Because:
+
+x / y
+
+👉 Division by 0 is not allowed
+
+Example:
+
+5 / 0  ❌ ERROR
+✅ So MIT is doing safety check
+
+👉 Only divide if y is not zero
+
+🔍 Example 1
+
+You enter:
+
+x = 4
+y = 2
+
+👉 y ≠ 0 → True
+👉 So:
+
+x/y = 2
+
+✔ Output:
+
+therefore, x/y is 2
+🔍 Example 2
+
+You enter:
+
+x = 4
+y = 0
+
+👉 y ≠ 0 → False
+👉 So division is skipped
+
+✔ No error 👍
+
+🔴 Important
+
+👉 This part runs ONLY when:
+
+if x == y:
+
+✔ That’s why you didn’t see it earlier
+
+🔵 2. Second code: n = 0 (while loop)
+
+Code:
+
+n = 0
+
+while n < 5:
+    print(n)
+    n = n + 1
+🧠 Step-by-step
+✅ Step 1
+n = 0
+
+👉 Start from 0
+
+✅ Step 2
+while n < 5:
+
+👉 Check condition:
+
+0 < 5 → True
+✅ Step 3
+print(n)
+
+👉 prints:
+
+0
+✅ Step 4
+n = n + 1
+
+👉 n becomes:
+
+1
+🔁 Loop repeats
+
+Now:
+
+1 < 5 → True → print 1
+2 < 5 → True → print 2
+3 < 5 → True → print 3
+4 < 5 → True → print 4
+5 < 5 → False → STOP
+✅ Final Output
+0
+1
+2
+3
+4
+🎯 Simple understanding
+
+👉 n = 0 = starting point
+👉 while n < 5 = stopping condition
+👉 n = n + 1 = moving forward
+
+🔥 One-line summary
+y != 0 → avoid division error
+n = 0 → starting value of loop
