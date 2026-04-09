@@ -1213,4 +1213,98 @@ else → runs if all conditions are False
 
 if fails → check elif → if all fail → else runs
 Done
+Date 9 april 2026
+
+MIT OCW – Lecture 2 Notes (Branching & Iteration)
+🔹 1. Input with float()
+x = float(input("enter a number for x: "))
+y = float(input("enter a number for y: "))
+✅ Meaning (step-by-step)
+input() → takes user input (always as string)
+float() → converts that input into a number (decimal allowed)
+So now:
+x and y are numbers you type while running
+🔹 2. Main If-Else Logic (MIT Example)
+if x == y:
+    print("x and y are equal")
+    if y != 0:
+        print("therefore, x/y is", x/y)
+elif x < y:
+    print("x is smaller")
+else:
+    print("y is smaller")
+🔹 🔥 Understanding Each Step
+✅ Step 1: Check equality
+if x == y:
+If both numbers same → go inside
+✅ Step 2: Nested if (VERY IMPORTANT)
+if y != 0:
+Means: y is NOT zero
+Why? 👉 To avoid division by zero error
+✅ Step 3: Division
+print("therefore, x/y is", x/y)
+Only runs when:
+x == y
+y ≠ 0
+✅ Step 4: If not equal
+elif x < y:
+If x smaller → print
+✅ Step 5: Otherwise
+else:
+If above all false → y is smaller
+🔹 🧠 Important Understanding (Your Confusion Cleared)
+
+👉 You DO NOT give values before
+👉 You give values AFTER clicking Run
+
+Example:
+
+enter a number for x: 2
+enter a number for y: 5
+
+Output:
+
+x is smaller
+🔹 3. While Loop (MIT Example)
+n = 0
+while n < 5:
+    print(n)
+    n = n + 1
+🔹 🔥 Step-by-Step Logic
+Step 1:
+n = 0
+
+Start from 0
+
+Step 2:
+while n < 5:
+
+Loop runs until condition is TRUE
+
+Step 3:
+print(n)
+
+Print current value
+
+Step 4:
+n = n + 1
+
+Increase value (VERY IMPORTANT)
+👉 otherwise infinite loop
+
+✅ Output:
+0
+1
+2
+3
+4
+🔹 🧠 Control Flow (Simple Meaning)
+Program checks condition
+Takes decision
+Repeats if needed
+
+👉 Tools:
+
+if / elif / else → decisions
+while → repetition
 
