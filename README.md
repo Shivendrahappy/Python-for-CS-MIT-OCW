@@ -23,6 +23,7 @@ A computer does **only two things**, but does them extremely well:
 
 ### Memory Capacity
 
+
 * Computers can store **hundreds of gigabytes (GB)** of data.
 * 1 byte = typically **8 bits**, used to store one character.
 * If 1 byte weighed 1 gram, then:
@@ -1599,3 +1600,36 @@ Now:
 🔥 One-line summary
 y != 0 → avoid division error
 n = 0 → starting value of loop
+11 April 2026
+MIT OCW – Input, Condition & Loop (Session Notes)
+🔹 1. Input Concept
+x = float(input("enter number for x: "))
+🧠 Meaning
+input() → takes value from user
+Program pauses and waits
+User types value
+float() → converts it into number
+🔹 2. Comparison Operator
+x == y
+🧠 Meaning
+== → checks equality
+Returns True / False
+🔹 3. Nested If (Important)
+if x == y:
+    if y != 0:
+        print(x/y)
+🧠 Meaning
+First check: x == y
+Then check: y is not 0
+Prevents division by zero error
+🔹 4. While Loop (Forest Example)
+n = input("Go left or right: ")
+
+while n == "right":
+    n = input("Still in forest. Go left or right: ")
+
+print("You got out of the forest")
+🔹 🧠 Logic of Loop
+n == "right" → condition check
+If True → loop continues
+If False → loop stops
