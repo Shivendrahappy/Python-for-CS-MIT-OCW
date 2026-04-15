@@ -1698,3 +1698,64 @@ Easier for counting	Flexible
 Python uses indentation to define code block
 Condition must become False in while loop
 Otherwise loop will run forever
+What does “until condition becomes False” mean?
+
+Take this:
+
+n = 0
+while n < 5:
+    print(n)
+    n = n + 1
+
+👉 The condition is: n < 5
+
+Python checks this before every loop:
+
+Step	n value	Condition (n < 5)	Runs?
+1	0	True	✅ print 0
+2	1	True	✅ print 1
+3	2	True	✅ print 2
+4	3	True	✅ print 3
+5	4	True	✅ print 4
+6	5	False	❌ stop
+
+👉 So loop stops when condition becomes False
+
+🔹 Your confusion (important correction)
+
+You said:
+
+n < 5 means 4 loops, but n+1 makes 5 loops
+
+❌ Not correct
+✅ Correct understanding:
+
+n < 5 → allows values 0,1,2,3,4
+That is 5 values → 5 loops
+
+👉 n = n + 1 does NOT increase loops
+👉 It just moves n forward so loop can stop
+
+🔹 If we remove n = n + 1
+n = 0
+while n < 5:
+    print(n)
+
+👉 Output:
+
+0
+0
+0
+0
+... infinite
+
+💥 Loop never stops → because condition always True
+
+🔹 Simple rule to remember
+for loop → fixed count (you already know number of loops)
+while loop → runs until condition becomes False
+🔹 Final clarity in one line
+
+👉 while n < 5
+means:
+“Keep running as long as n is less than 5”
