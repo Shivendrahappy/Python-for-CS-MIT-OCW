@@ -1633,3 +1633,68 @@ print("You got out of the forest")
 n == "right" → condition check
 If True → loop continues
 If False → loop stops
+Date 15 April 2026
+
+
+Control Flow: Loops (MIT OCW – Python)
+🔹 1. For Loop (fixed number of iterations)
+
+Used when we know how many times to repeat
+
+Syntax:
+
+for variable in range(n):
+    # code block
+
+Example:
+
+for i in range(5):
+    print(i)
+
+Output:
+
+0
+1
+2
+3
+4
+
+👉 range(5) → starts from 0 and stops before 5
+👉 Loop runs 5 times
+
+🔹 2. While Loop (condition-based)
+
+Used when we repeat until condition becomes False
+
+Syntax:
+
+while condition:
+    # code block
+
+Example:
+
+n = 0
+while n < 5:
+    print(n)
+    n = n + 1
+
+Output:
+
+0
+1
+2
+3
+4
+
+👉 Loop runs while condition is True
+👉 n = n + 1 is important → otherwise infinite loop
+
+🔹 3. Key Difference
+For Loop	While Loop
+Fixed repetitions	Based on condition
+Uses range()	Uses condition
+Easier for counting	Flexible
+🔹 4. Important Concept
+Python uses indentation to define code block
+Condition must become False in while loop
+Otherwise loop will run forever
