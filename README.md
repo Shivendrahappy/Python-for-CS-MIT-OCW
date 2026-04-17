@@ -2345,3 +2345,21 @@ simple slicing	advanced slicing
 : → a → b → c → d
 ::2 → a → c → e (skipping)
 ::-1 → reverse direction
+Revision
+s = string (text)
+len(s) = length
+indexing starts from 0
+🔹 Step 2 (5 min)
+
+Recall:
+
+s[0] → first character
+s[-1] → last character
+🔹 Step 3 (5 min)
+
+Recall slicing:
+
+s[a:b] → a to b-1
+: → normal slice
+:: → slice + step
+[::-1] → reverse
