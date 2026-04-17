@@ -2251,3 +2251,97 @@ String = sequence of characters
 Indexing → single character access
 Slicing → multiple characters
 Step → controls movement
+
+DATE  17 - 4- 2026
+
+1. Full Slice (copy whole string)
+s = "abcdef"
+print(s[:])
+
+👉 Output:
+
+abcdef
+🧠 Meaning
+No start, no stop → take entire string
+Acts like a copy
+🔹 2. Step = 2 (skip characters)
+s = "abcdef"
+print(s[::2])
+
+👉 Output:
+
+ace
+🧠 Meaning
+Start to end
+Take every 2nd character
+🔹 3. Reverse string
+s = "abcdef"
+print(s[::-1])
+
+👉 Output:
+
+fedcba
+🧠 Meaning
+Step = -1 → go backward
+Used to reverse text
+🔹 4. Partial slice from middle
+s = "abcdef"
+print(s[2:5])
+
+👉 Output:
+
+cde
+🧠 Meaning
+Start = index 2
+Stop = index 5 (excluded)
+🔹 5. Mix: start + step
+s = "abcdef"
+print(s[1:6:2])
+
+👉 Output:
+
+bdf
+🧠 Meaning
+Start at index 1 → b
+Go till index 6
+Jump by 2
+🎯 Final understanding
+
+All slicing follows:
+
+👉 [start : stop : step]
+
+start → where to begin
+stop → where to stop (excluded)
+step → how to move
+🔴 Difference between : and ::
+🔹 1. Single : → slicing
+s[start : stop]
+
+👉 Means:
+
+take characters from start to stop-1
+
+Example idea:
+
+no skipping
+normal forward movement
+🔹 2. Double :: → slicing + step
+s[start : stop : step]
+
+👉 Means:
+
+take characters AND control how you move
+
+🔍 Key difference
+:	::
+selects range	selects range + movement
+normal step = 1	custom step (2, -1, etc.)
+simple slicing	advanced slicing
+🔹 Simple understanding
+: → “give me part of string”
+:: → “give me part + how to move”
+🔹 Example logic (no code repetition)
+: → a → b → c → d
+::2 → a → c → e (skipping)
+::-1 → reverse direction
