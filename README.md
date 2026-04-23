@@ -2363,3 +2363,64 @@ s[a:b] → a to b-1
 : → normal slice
 :: → slice + step
 [::-1] → reverse
+
+23 april 2026
+
+📘 Strings are Immutable (Python)
+🔹 What does “immutable” mean?
+
+👉 Immutable = cannot be changed after creation
+
+Once a string is created, you cannot modify its characters directly
+
+🔹 Example idea
+"hello" is stored in memory
+You cannot change 'h' → 'y' directly
+
+👉 Trying to change gives error
+
+🔹 Why is this important?
+
+Because Python treats strings as:
+
+fixed sequences
+not editable in-place
+🔹 Correct approach
+
+👉 Instead of changing string:
+
+Create a new string and reassign it
+
+🔹 How it works (step-by-step logic)
+
+Given:
+
+s = "hello"
+Step 1:
+
+Take part of string:
+
+s[1:] → "ello"
+Step 2:
+
+Add new character:
+
+'y' + "ello" → "yello"
+Step 3:
+
+Reassign:
+
+s = "yello"
+🔹 Key concepts used
+1. Slicing
+s[1:] → from index 1 to end
+removes first character
+2. Concatenation
+'y' + "ello" → joins two strings
+3. Reassignment
+variable now points to new string
+🔹 Important rules
+❌ Cannot modify string using index
+✅ Must create a new string
+Strings remain unchanged internally
+s[1:] or s [1:len(s)] same thing
