@@ -2424,3 +2424,38 @@ variable now points to new string
 ✅ Must create a new string
 Strings remain unchanged internally
 s[1:] or s [1:len(s)] same thing
+What is 1:len(s) ?
+
+Take:
+
+s = "hello"
+
+👉 len(s) = 5
+
+So:
+
+s[1:len(s)] = s[1:5]
+🔍 Now evaluate:
+
+Index:
+
+h  e  l  l  o
+0  1  2  3  4
+
+👉 s[1:5] means:
+
+start from index 1 → e
+go till index 5 (not included)
+
+👉 Result:
+
+ello
+🔥 Important realization
+
+👉 s[1:len(s)] = s[1:]
+
+Both SAME.
+
+🧠 Why MIT used len(s)?
+To show full logic clearly
+More “mathematical” style
