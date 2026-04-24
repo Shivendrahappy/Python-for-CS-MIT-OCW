@@ -2735,3 +2735,30 @@ You just don’t see it printed because:
 ❌ You never wrote:
 
 print(char)
+Code
+an_letters = "aeiou"
+
+word = input("Enter a word: ")
+
+for char in word:
+    if char in an_letters:
+        print("Give me an " + char)
+    else:
+        print("Give me a " + char)
+🧠 Very short meaning
+an_letters → vowels
+take word from user
+go through each letter
+if vowel → print an
+else → print a
+🔍 Example
+
+Input:
+
+dog
+
+Output:
+
+Give me a d
+Give me an o
+Give me a g
