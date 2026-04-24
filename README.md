@@ -2560,6 +2560,36 @@ word = "abc"
 
 for char in word:
     print(char)
+    “If there is already ‘i’, why write or 'u'?”
+
+🔴 Answer (simple)
+
+👉 Because the program is checking for two possibilities, not just one.
+
+🧠 Think like this
+Case 1:
+if char == 'i'
+
+👉 Only checks:
+
+i ✔
+ignores u ❌
+Case 2:
+if char == 'i' or char == 'u'
+
+👉 Checks:
+
+i ✔
+u ✔
+🔍 Example
+
+Word:
+
+milk
+
+👉 contains i
+
+So condition becomes true → works
 🔹 Output
 a
 b
@@ -2644,3 +2674,64 @@ Found o
 🎯 What you learned here
 
 👉 Loop + condition together
+Code again
+word = input("Enter a word: ")
+
+for char in word:
+    if char == 'i' or char == 'u':
+        print("There is an i or u")
+🧠 Step 1: What happens when you enter “milk”
+
+When program runs:
+
+👉 It shows:
+
+Enter a word:
+
+👉 You type:
+
+milk
+
+👉 Now:
+
+word = "milk"
+🔍 Step 2: Where is "milk"?
+
+👉 Stored inside variable:
+
+word = "milk"
+🔍 Step 3: Loop uses it
+for char in word:
+
+👉 This means:
+
+Take letters from "milk" one by one:
+
+m
+i
+l
+k
+🔴 Step 4: Condition check
+if char == 'i' or char == 'u':
+
+👉 Check each letter:
+
+char	condition	result
+m	not i/u	nothing
+i	YES	print
+l	no	nothing
+k	no	nothing
+🔹 Output
+There is an i or u
+🎯 Now your confusion answered
+
+“Where did milk go?”
+
+👉 It didn’t go anywhere
+👉 It is being used inside the loop
+
+You just don’t see it printed because:
+
+❌ You never wrote:
+
+print(char)
