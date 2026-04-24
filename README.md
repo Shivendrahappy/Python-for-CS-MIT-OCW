@@ -2620,3 +2620,27 @@ you can write:
 for x in word:
 
 Same meaning
+Code
+word = "dog"
+
+for char in word:
+    if char == "o":
+        print("Found o")
+🧠 Full meaning
+
+Go through each letter in "dog", and if the letter is "o", print something.
+
+🔍 Step-by-step
+
+Word = "dog"
+
+Loop runs:
+
+char = 'd' → not "o" → nothing happens
+char = 'o' → YES → print "Found o"
+char = 'g' → not "o" → nothing
+🔹 Output
+Found o
+🎯 What you learned here
+
+👉 Loop + condition together
