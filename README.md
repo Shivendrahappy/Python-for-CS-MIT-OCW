@@ -24,6 +24,7 @@ A computer does **only two things**, but does them extremely well:
 ### Memory Capacity
 
 
+
 * Computers can store **hundreds of gigabytes (GB)** of data.
 * 1 byte = typically **8 bits**, used to store one character.
 * If 1 byte weighed 1 gram, then:
@@ -3064,3 +3065,257 @@ num_guesses += 1
 counts:
 
 how many guesses program tried
+
+
+This is the Bisection Cube Root method.
+
+🔹 Full Code
+cube = 27
+epsilon = 0.01
+num_guesses = 0
+
+low = 0
+high = cube
+
+guess = (high + low)/2.0
+
+while abs(guess**3 - cube) >= epsilon:
+
+    if guess**3 < cube:
+        low = guess
+
+    else:
+        high = guess
+
+    guess = (high + low)/2.0
+    num_guesses += 1
+
+print('num_guesses =', num_guesses)
+print(guess, 'is close to the cube root of', cube)
+🔥 Main idea first
+
+Instead of checking:
+
+0
+1
+2
+3
+4
+5
+
+computer checks:
+
+middle value again and again.
+
+This is SMART searching.
+
+🔹 Line 1
+cube = 27
+
+We want:
+
+cube root of 27
+
+🔹 Line 2
+epsilon = 0.01
+
+means:
+
+acceptable small error
+
+Computer says:
+
+“close enough is okay”
+
+🔹 Line 3
+num_guesses = 0
+
+Counter.
+
+Counts:
+
+how many guesses computer tried.
+
+🔹 Line 4
+low = 0
+
+Lower boundary.
+
+Search starts from 0.
+
+🔹 Line 5
+high = cube
+
+Upper boundary.
+
+For 27:
+
+high = 27
+🔥 So current search area is
+0 ---------------- 27
+🔹 Line 6
+guess = (high + low)/2.0
+
+VERY IMPORTANT.
+
+means:
+
+take middle value
+
+🔹 Example
+high = 27
+low = 0
+
+then:
+
+(27 + 0)/2
+
+=
+
+13.5
+
+So:
+
+guess = 13.5
+🔥 Why middle?
+
+Because:
+
+middle cuts search space in half.
+
+Very efficient.
+
+🔹 Line 7
+while abs(guess**3 - cube) >= epsilon:
+
+means:
+
+Continue while answer is NOT close enough.
+
+🔹 Break slowly
+Part A
+guess**3
+
+cube of guess.
+
+Part B
+guess**3 - cube
+
+difference from target.
+
+Part C
+abs(...)
+
+remove minus sign.
+
+Part D
+>= epsilon
+
+means:
+
+error still too big?
+
+🔥 Full meaning
+while abs(guess**3 - cube) >= epsilon:
+
+means:
+
+Keep searching while answer is not close enough.
+
+🔹 Line 8
+if guess**3 < cube:
+
+means:
+
+Is guess too small?
+
+🔹 Example
+
+If:
+
+guess = 2
+
+then:
+
+2**3 = 8
+
+and:
+
+8 < 27
+
+TRUE.
+
+Meaning:
+
+real answer must be bigger.
+
+🔹 Line 9
+low = guess
+
+Move lower boundary upward.
+
+Example:
+
+Old:
+
+0 ----------- 27
+
+Now:
+
+2 ----------- 27
+
+because answer cannot be below 2 now.
+
+🔹 ELSE
+else:
+    high = guess
+
+means:
+
+guess too big
+
+Move upper boundary downward.
+
+🔥 Example
+
+If:
+
+guess = 13.5
+
+then:
+
+13.5**3
+
+VERY BIG.
+
+So:
+
+answer must be smaller.
+
+Now:
+
+0 -------- 13.5
+🔹 Next line
+guess = (high + low)/2.0
+
+Again:
+
+take middle of NEW search area.
+
+🔹 Next line
+num_guesses += 1
+
+means:
+
+num_guesses = num_guesses + 1
+
+Increase counter.
+
+🔹 Final prints
+print('num_guesses =', num_guesses)
+
+prints total guesses.
+
+print(guess, 'is close to the cube root of', cube)
+
+prints final approximate answer.
