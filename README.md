@@ -2948,3 +2948,119 @@ Cube root of 8 is 2
 🔥 ONE-SENTENCE SUMMARY
 
 Try numbers one by one until their cube becomes equal to the target number.
+Approximate Solution
+
+This is the next improvement after:
+✅ perfect cube
+✅ guess-and-check cube root
+
+Now MIT says:
+
+“What if exact cube root does NOT exist?”
+
+Example:
+
+cube = 10
+
+There is NO exact integer:
+
+x*x*x = 10
+
+So instead:
+
+find a CLOSE answer.
+
+🔹 Main idea
+
+Start from:
+
+guess = 0.0
+
+Then increase slowly:
+
+guess += increment
+
+until:
+
+guess**3
+
+becomes close to cube.
+
+🔥 This line is EVERYTHING
+while abs(guess**3 - cube) >= epsilon:
+
+Break slowly.
+
+🔹 Part 1
+guess**3
+
+cube of guess.
+
+🔹 Part 2
+guess**3 - cube
+
+difference from target.
+
+Example:
+
+If:
+
+guess = 2
+cube = 10
+
+then:
+
+2**3 = 8
+8 - 10 = -2
+🔹 Part 3
+abs(...)
+
+removes minus sign.
+
+So:
+
+abs(-2) = 2
+🔹 Part 4
+>= epsilon
+
+means:
+
+Is error still bigger than allowed error?
+
+🔥 Full meaning
+while abs(guess**3 - cube) >= epsilon:
+
+means:
+
+Continue guessing while answer is NOT close enough.
+
+🔹 epsilon meaning
+epsilon = 0.01
+
+means:
+
+acceptable small error
+
+🔹 increment meaning
+increment = 0.0001
+
+means:
+
+move very slowly
+
+🔥 Important concept
+
+Small increment:
+✅ more accurate
+❌ slower
+
+Large increment:
+✅ faster
+❌ less accurate
+
+🔹 num_guesses
+num_guesses += 1
+
+counts:
+
+how many guesses program tried
