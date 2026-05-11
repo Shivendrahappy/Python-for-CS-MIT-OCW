@@ -2762,3 +2762,189 @@ Output:
 Give me a d
 Give me an o
 Give me a g
+
+11-05-2026
+
+ALGORITHMS 
+GUESS Making
+cube = 8
+
+for guess in range(abs(cube) + 1):
+
+    if guess**3 >= abs(cube):
+        break
+
+if guess**3 != abs(cube):
+    print(cube, 'is not a perfect cube')
+
+else:
+    if cube < 0:
+        guess = -guess
+
+    print('Cube root of', cube, 'is', guess)
+🔹 Line 1
+cube = 8
+
+👉 Number whose cube root we want.
+
+Here:
+
+Find cube root of 8.
+
+🔹 Line 2
+for guess in range(abs(cube) + 1):
+
+This is the BIG line.
+
+Part A
+abs(cube)
+
+means:
+
+remove minus sign
+
+Example:
+
+abs(-8) = 8
+Part B
+abs(cube) + 1
+
+For cube = 8:
+
+8 + 1 = 9
+Part C
+range(9)
+
+creates numbers:
+
+0,1,2,3,4,5,6,7,8
+FULL meaning
+for guess in range(abs(cube) + 1):
+
+means:
+
+Try every number from 0 to 8 one by one.
+
+🔹 Line 3
+if guess**3 >= abs(cube):
+
+Break it.
+
+Part A
+guess**3
+
+means:
+
+guess × guess × guess
+
+Example:
+
+2**3 = 2×2×2 = 8
+Part B
+>=
+
+means:
+
+greater than OR equal to
+
+FULL meaning
+if guess**3 >= abs(cube):
+
+means:
+
+If cube of guess becomes equal or bigger than number.
+
+🔹 Example
+guess	guess³
+0	0
+1	1
+2	8
+
+At 2:
+
+8 >= 8
+
+TRUE.
+
+🔹 Line 4
+break
+
+means:
+
+Stop loop immediately.
+
+No need to continue checking.
+
+🔹 Line 5
+if guess**3 != abs(cube):
+!=
+
+means:
+
+not equal to
+
+Full meaning
+if guess**3 != abs(cube):
+
+means:
+
+If we did NOT get exact cube root.
+
+🔹 Example with 9
+guess	guess³
+2	8
+3	27
+
+27 became bigger than 9.
+
+But:
+
+27 != 9
+
+TRUE.
+
+So:
+
+9 is not a perfect cube
+🔹 Line 6
+print(cube, 'is not a perfect cube')
+
+prints message.
+
+🔹 Line 7
+else:
+
+means:
+
+otherwise
+
+Meaning:
+
+exact cube root WAS found.
+
+🔹 Line 8
+if cube < 0:
+
+means:
+
+if number is negative
+
+🔹 Line 9
+guess = -guess
+
+Makes answer negative.
+
+Example:
+
+3 → -3
+🔹 Final Line
+print('Cube root of', cube, 'is', guess)
+
+prints final answer.
+
+Example:
+
+Cube root of 8 is 2
+🔥 ONE-SENTENCE SUMMARY
+
+Try numbers one by one until their cube becomes equal to the target number.
