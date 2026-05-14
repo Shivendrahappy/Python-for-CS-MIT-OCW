@@ -3319,3 +3319,367 @@ prints total guesses.
 print(guess, 'is close to the cube root of', cube)
 
 prints final approximate answer.
+14-May-2026
+
+
+Bisection Search Cube Root
+🔹 Main Idea
+
+Bisection search is a smart searching method.
+
+Instead of checking every number one by one:
+
+0,1,2,3,4,5...
+
+the program always checks the middle value.
+
+This makes the search much faster.
+
+🔹 Goal
+
+Find cube root of a number.
+
+Example:
+
+cube = 27
+
+Real cube root:
+
+3
+🔹 Search Space
+
+The program starts with two boundaries:
+
+low = 0
+high = cube
+
+For cube = 27:
+
+0 -------------------- 27
+
+The answer must exist somewhere between low and high.
+
+🔹 Middle Guess
+
+The program calculates middle value:
+
+guess = (high + low)/2.0
+
+Example:
+
+(27 + 0)/2 = 13.5
+
+First guess becomes:
+
+13.5
+🔹 Checking the Guess
+
+The program checks:
+
+guess**3
+
+which means:
+
+guess × guess × guess
+
+Example:
+
+13.5**3
+
+is much bigger than 27.
+
+So the guess is too large.
+
+🔹 Reducing Search Space
+
+If guess is too big:
+
+high = guess
+
+Now search space becomes:
+
+0 -------- 13.5
+
+The upper half is removed.
+
+🔹 Middle Again
+
+Program again calculates middle:
+
+(13.5 + 0)/2 = 6.75
+
+Still too large.
+
+Again upper half removed.
+
+🔹 Important Turning Point
+
+Eventually program gets:
+
+1.6875
+
+Now:
+
+1.6875**3
+
+is smaller than 27.
+
+This means the guess is too small.
+
+Now the program changes lower boundary:
+
+low = guess
+
+Search space becomes:
+
+1.6875 -------- 3.375
+🔹 Why Numbers Start Increasing Again
+
+This was the main confusion.
+
+The numbers increase because:
+
+low boundary moved upward
+high boundary stayed same
+
+So the middle value also increases.
+
+Example:
+
+(1.6875 + 3.375)/2
+
+gives:
+
+2.53125
+🔹 Program Keeps Shrinking the Interval
+
+The program keeps squeezing the answer from both sides:
+
+0 ---------------- 27
+0 -------- 13.5
+0 ---- 6.75
+0 -- 3.375
+1.68 -- 3.375
+2.53 -- 3.375
+2.9 -- 3.1
+2.99 -- 3.01
+
+The answer becomes trapped closer and closer to 3.
+
+🔹 Epsilon Meaning
+epsilon = 0.01
+
+Epsilon means:
+
+acceptable small error
+
+The program stops when the answer becomes close enough.
+
+🔹 Why Bisection Search is Fast
+
+Approximate method checks slowly:
+
+guess += increment
+
+Bisection search jumps directly to the middle:
+
+(high + low)/2.0
+
+So it needs far fewer guesses.
+
+🔹 Core Concept
+
+Bisection search is not only about cube roots.
+
+It teaches an important computer science idea:
+
+Repeatedly divide the search space into halves to find answers efficiently.
+
+Properly 
+Goal
+
+Find cube root of a number.
+
+Example:
+
+cube = 27
+
+Real cube root is:
+
+3
+🔹 Starting Search Space
+
+The program starts with two boundaries:
+
+low = 0
+high = cube
+
+For cube = 27:
+
+0 -------------------- 27
+
+The answer must exist somewhere between low and high.
+
+🔹 Finding Middle Value
+
+The program calculates middle:
+
+guess = (high + low)/2.0
+
+Example:
+
+(27 + 0)/2
+
+=
+
+13.5
+
+First guess becomes:
+
+13.5
+🔹 Checking the Guess
+
+The program checks:
+
+guess**3
+
+which means:
+
+guess × guess × guess
+
+Example:
+
+13.5**3
+
+is much bigger than 27.
+
+This means:
+
+the guess is too large.
+
+🔹 Changing the Search Space
+
+If guess is too large:
+
+high = guess
+
+Now search space becomes:
+
+0 -------- 13.5
+
+The upper half is removed.
+
+🔹 Repeating the Process
+
+Program again takes middle value:
+
+(13.5 + 0)/2
+
+=
+
+6.75
+
+Still too large.
+
+Again upper half removed.
+
+🔹 Important Turning Point
+
+Eventually program gets:
+
+1.6875
+
+Now:
+
+1.6875**3
+
+is smaller than 27.
+
+This means:
+
+the guess is too small.
+
+Now the program changes the lower boundary:
+
+low = guess
+
+Search space becomes:
+
+1.6875 -------- 3.375
+🔹 Why Numbers Start Increasing Again
+
+The numbers increase because:
+
+low boundary moved upward
+high boundary stayed same
+
+So the middle value also increases.
+
+Example:
+
+(1.6875 + 3.375)/2
+
+=
+
+2.53125
+🔹 Program Keeps Shrinking the Interval
+
+The program keeps squeezing the answer from both sides:
+
+0 ---------------- 27
+0 -------- 13.5
+0 ---- 6.75
+0 -- 3.375
+1.6875 -- 3.375
+2.53125 -- 3.375
+2.953125 -- 3.375
+2.953125 -- 3.1640625
+
+The answer gets trapped closer and closer to 3.
+
+🔹 Epsilon Meaning
+epsilon = 0.01
+
+Epsilon means:
+
+acceptable small error
+
+The program does not need perfect exact answer.
+
+It only needs an answer close enough.
+
+🔹 Approximate Answer
+
+The loop continues while:
+
+abs(guess**3 - cube) >= epsilon
+
+Meaning:
+
+continue while error is still too large.
+
+The loop stops when:
+
+abs(guess**3 - cube) < epsilon
+
+Meaning:
+
+answer is now close enough.
+
+🔹 Important Difference
+
+Exact search:
+
+guess**3 == cube
+
+needs a perfect answer.
+
+Approximate bisection search:
+
+abs(guess**3 - cube) < epsilon
+
+needs only a close answer.
+
+🔹 Core Concept
+
+Bisection search repeatedly divides the search space into halves until the answer becomes close enough
