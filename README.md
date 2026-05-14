@@ -3683,3 +3683,230 @@ needs only a close answer.
 🔹 Core Concept
 
 Bisection search repeatedly divides the search space into halves until the answer becomes close enough
+
+Full Code
+cube = 27
+epsilon = 0.01
+num_guesses = 0
+
+low = 0
+high = cube
+
+guess = (high + low)/2.0
+
+while abs(guess**3 - cube) >= epsilon:
+
+    if guess**3 < cube:
+        low = guess
+
+    else:
+        high = guess
+
+    guess = (high + low)/2.0
+    num_guesses += 1
+
+print('num_guesses =', num_guesses)
+print(guess, 'is close to the cube root of', cube)
+🔥 Line 1
+cube = 27
+
+We want:
+
+cube root of 27
+
+🔥 Line 2
+epsilon = 0.01
+
+means:
+
+acceptable small error
+
+Computer does not need exact answer.
+
+Close answer is okay.
+
+🔥 Line 3
+num_guesses = 0
+
+Counter variable.
+
+Counts:
+
+how many guesses program tried.
+
+🔥 Line 4
+low = 0
+
+Lower boundary of search space.
+
+🔥 Line 5
+high = cube
+
+Upper boundary of search space.
+
+For cube = 27:
+
+0 ---------------- 27
+🔥 Line 6
+guess = (high + low)/2.0
+
+Very important line.
+
+means:
+
+take middle value
+
+Example:
+
+(27 + 0)/2
+
+=
+
+13.5
+
+First guess becomes:
+
+13.5
+🔥 Line 7
+while abs(guess**3 - cube) >= epsilon:
+
+means:
+
+continue loop while answer is not close enough.
+
+🔹 Break this line
+Part A
+guess**3
+
+means:
+
+guess × guess × guess
+
+cube of guess.
+
+Part B
+guess**3 - cube
+
+means:
+
+difference from target.
+
+Part C
+abs(...)
+
+removes minus sign.
+
+Part D
+>= epsilon
+
+means:
+
+is error still too large?
+
+🔥 Full meaning
+while abs(guess**3 - cube) >= epsilon:
+
+means:
+
+continue searching while guess is not close enough.
+
+🔥 Line 8
+if guess**3 < cube:
+
+means:
+
+is guess too small?
+
+🔹 Example
+
+If:
+
+guess = 2
+
+then:
+
+2**3 = 8
+
+and:
+
+8 < 27
+
+TRUE.
+
+Meaning:
+
+answer must be bigger.
+
+🔥 Line 9
+low = guess
+
+Move lower boundary upward.
+
+🔹 Example
+
+Old:
+
+0 -------- 3.375
+
+New:
+
+1.6875 -------- 3.375
+
+because answer cannot be below 1.6875 now.
+
+🔥 ELSE
+else:
+    high = guess
+
+means:
+
+guess too big
+
+Move upper boundary downward.
+
+🔹 Example
+
+If:
+
+guess = 13.5
+
+then:
+
+13.5**3
+
+is much bigger than 27.
+
+So:
+
+high = 13.5
+🔥 Next line
+guess = (high + low)/2.0
+
+Again:
+
+take middle of new search space.
+
+🔥 Next line
+num_guesses += 1
+
+means:
+
+num_guesses = num_guesses + 1
+
+Increase counter by 1.
+
+🔥 Final line
+print('num_guesses =', num_guesses)
+
+prints:
+
+total guesses tried.
+
+🔥 Last line
+print(guess, 'is close to the cube root of', cube)
+
+prints final approximate answer.
+
+Example:
+
+2.999995 is close to the cube root of 27
