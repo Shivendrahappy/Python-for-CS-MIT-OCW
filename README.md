@@ -3911,3 +3911,170 @@ Example:
 
 2.999995 is close to the cube root of 27
 done
+
+
+
+22-5- 2026
+
+Lecture 4 — Decomposition, Abstraction and Functions
+1. Decomposition
+Meaning
+
+Decomposition means:
+
+breaking one large problem or program into smaller manageable parts.
+
+Instead of writing one huge code file, programmers divide the work into smaller sections or functions.
+
+Why decomposition is useful
+✅ Easier to understand
+
+Small pieces of code are easier to read than one giant program.
+
+✅ Easier debugging
+
+If an error happens, we can check only the specific function/problem area instead of the whole program.
+
+✅ Easier reuse
+
+A function written once can be reused many times.
+
+Example:
+
+square(5)
+square(10)
+square(20)
+
+Same function reused multiple times.
+
+✅ Better organization
+
+Code becomes clean and structured.
+
+✅ Helpful in teamwork
+
+Different programmers can work on different parts of the program.
+
+Projector Example (MIT)
+
+MIT compares decomposition with a projector system.
+
+Idea:
+
+A large image can be created using several smaller projectors.
+
+Each projector:
+
+performs one task
+takes input
+produces output
+
+All projectors together achieve one final goal.
+
+Programming Analogy
+
+Instead of one huge program:
+
+# giant messy code
+
+we divide work into functions:
+
+login()
+search()
+payment()
+display_result()
+
+Each function performs one specific task.
+
+2. Abstraction
+Meaning
+
+Abstraction means:
+
+hiding unnecessary internal details and showing only the important interface.
+
+Projector Example
+
+We can use a projector without knowing:
+
+internal circuits
+electronics
+lens mechanisms
+
+We only need to know:
+
+how to connect it
+input/output behavior
+how to operate it
+
+The projector behaves like a “black box”.
+
+Programming Example
+
+We use:
+
+abs(-5)
+
+without knowing how Python internally calculates it.
+
+We only care about:
+
+input → output
+Main Idea of Abstraction
+
+Hide complicated details to make systems easier to use.
+
+3. Functions
+Meaning
+
+A function is:
+
+a reusable block of code that performs a specific task.
+
+Functions help achieve:
+
+decomposition
+abstraction
+Basic Function Structure
+def function_name(parameters):
+    body
+    return value
+Example
+def square(x):
+    return x*x
+Explanation
+def
+
+Keyword used to create a function.
+
+square
+
+Function name.
+
+(x)
+
+Parameter/input.
+
+return
+
+Sends output back.
+
+x*x
+
+Operation performed.
+
+Function Call
+square(5)
+
+Output:
+
+25
+Characteristics of Functions
+
+A function usually:
+
+has a name
+may have parameters
+contains a body/code
+performs a task
+may return a value
