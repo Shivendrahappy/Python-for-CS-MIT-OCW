@@ -4078,3 +4078,136 @@ may have parameters
 contains a body/code
 performs a task
 may return a value
+
+
+Function Example
+def square(x):
+    return x*x
+
+print(square(5))
+1. What is a Function?
+
+A function is:
+
+a reusable block of code that performs a specific task.
+
+Functions help:
+
+organize code
+reuse code
+simplify large programs
+2. Understanding the Example
+Function Definition
+def square(x):
+Meaning
+
+Create a function named:
+
+square
+
+The input parameter is:
+
+x
+3. What Does square Mean?
+
+Square means:
+
+multiply a number by itself.
+
+Example:
+
+5² = 5 × 5 = 25
+4. Understanding return
+return x*x
+
+This means:
+
+calculate the answer and send it back outside the function.
+
+5. Common Sense Understanding
+
+When we write:
+
+square(5)
+
+Python puts:
+
+x = 5
+
+inside the function.
+
+So:
+
+x*x
+
+becomes:
+
+5*5
+
+which gives:
+
+25
+
+Then:
+
+return 25
+
+sends the answer back outside.
+
+6. Step-by-Step Flow
+Step 1
+
+Function is created:
+
+def square(x):
+
+Nothing runs yet.
+
+Step 2
+
+Function is called:
+
+square(5)
+Step 3
+
+Python puts:
+
+x = 5
+Step 4
+
+Python calculates:
+
+x*x
+
+becomes:
+
+5*5
+Step 5
+
+Answer becomes:
+
+25
+Step 6
+
+return sends 25 outside the function.
+
+Step 7
+
+print displays the final output.
+
+Output:
+
+25
+7. Final Simple Meaning of return
+return sends the output/result
+from the function back to the place
+where the function was called.
+8. Core Beginner Understanding
+square(5)
+means:
+put 5 in place of x,
+Then multiply x by itself.
+
+So:
+
+5 × 5 = 25
