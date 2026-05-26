@@ -4211,3 +4211,227 @@ Then multiply x by itself.
 So:
 
 5 × 5 = 25
+
+MIT Function Code
+
+We will only focus on THIS code:
+
+def is_even(i):
+    return i % 2 == 0
+
+print(is_even(4))
+print(is_even(5))
+ Step 1 — Read Slowly (5 min)
+
+Read this like English:
+
+def is_even(i):
+
+Meaning:
+
+Create a machine named is_even
+that takes input i.
+
+Then:
+
+return i % 2 == 0
+
+Meaning:
+
+Check whether remainder after dividing by 2 is 0.
+
+If yes:
+
+True
+
+If no:
+
+False
+ Step 2 — Manual Dry Run (10 min)
+
+Write on paper:
+
+Example 1
+is_even(4)
+
+Then manually do:
+
+i = 4
+
+Now:
+
+4 % 2 == 0
+
+becomes:
+
+0 == 0
+
+Answer:
+
+True
+Example 2
+is_even(5)
+
+Now:
+
+i = 5
+
+Then:
+
+5 % 2 == 0
+
+becomes:
+
+1 == 0
+
+Answer:
+
+False
+
+
+The code
+def is_even(i):
+    return i % 2 == 0
+ 1. Why _ in is_even ?
+is_even
+
+The _ is just used to make names readable.
+
+Without _:
+
+iseven
+
+harder to read.
+
+With _:
+
+is_even
+
+easy to read like English:
+
+is even
+ 2. Why % instead of / ?
+
+Very important.
+
+/ means division
+
+Example:
+
+5 / 2
+
+Answer:
+
+2.5
+% means remainder
+
+Example:
+
+5 % 2
+
+Answer:
+
+1
+
+because:
+
+5 = 2×2 + 1
+
+remainder = 1
+
+Why use % here?
+
+Because even numbers leave:
+
+remainder 0
+
+when divided by 2.
+
+Example:
+
+4 % 2
+
+= 0
+
+So 4 is even.
+
+3. Why == instead of = ?
+
+Very important difference.
+
+= means assignment
+
+Example:
+
+x = 5
+
+Meaning:
+
+put 5 inside x
+== means comparison
+
+Example:
+
+5 == 5
+
+asks:
+
+Are they equal?
+
+Answer:
+
+True
+In our code
+i % 2 == 0
+
+means:
+
+Is the remainder equal to 0?
+ 4. Why i ?
+def is_even(i):
+
+i is just a variable name.
+
+Could also write:
+
+def is_even(number):
+
+or:
+
+def is_even(x):
+
+MIT used i meaning:
+
+integer/number
+ 5. Why brackets ( ) ?
+
+Brackets are used for:
+
+inputs to functions
+Example
+is_even(4)
+
+means:
+
+put 4 into the function
+
+Inside function:
+
+i = 4
+
+Similarly:
+
+is_even(5)
+
+means:
+
+i = 5
+ Simplest overall meaning
+return i % 2 == 0
+
+means:
+
+Check whether number leaves remainder 0
+when divided by 2.
+If yes → True
+If no → False
