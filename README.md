@@ -4435,3 +4435,412 @@ Check whether number leaves remainder 0
 when divided by 2.
 If yes → True
 If no → False
+
+may 28 ,2026
+# Lecture 4 — Variable Scope and Functions
+
+## Main Idea of Scope
+
+Scope means:
+
+> where a variable exists and where it can be used.
+
+Python creates different environments for:
+
+* variables outside functions
+* variables inside functions
+
+---
+
+# The Example Code
+
+```python
+def f(x):
+    x = x + 1
+    print("in f(x): x =", x)
+    return x
+
+x = 3
+z = f(x)
+
+print("outside x =", x)
+print("z =", z)
+```
+
+---
+
+# Step-by-Step Explanation
+
+---
+
+## Step 1 — Outside Variable
+
+```python
+x = 3
+```
+
+This creates a variable outside the function.
+
+Current outside value:
+
+```text
+x = 3
+```
+
+This is called:
+
+* global scope
+* outside variable
+
+---
+
+# Step 2 — Calling the Function
+
+```python
+z = f(x)
+```
+
+Meaning:
+
+> call function `f` and send value of `x` inside.
+
+Current outside value of x:
+
+```text
+3
+```
+
+So function receives:
+
+```text
+x = 3
+```
+
+inside the function.
+
+---
+
+# Step 3 — Inside the Function
+
+```python
+x = x + 1
+```
+
+Current inside value:
+
+```text
+x = 3
+```
+
+So Python calculates:
+
+```python
+x = 3 + 1
+```
+
+Result:
+
+```text
+x = 4
+```
+
+IMPORTANT:
+
+This change happens ONLY inside the function.
+
+---
+
+# Step 4 — Print Inside Value
+
+```python
+print("in f(x): x =", x)
+```
+
+Prints:
+
+```text
+in f(x): x = 4
+```
+
+This is the INSIDE value of x.
+
+---
+
+# Step 5 — Return
+
+```python
+return x
+```
+
+Current inside value:
+
+```text
+4
+```
+
+So Python returns:
+
+```text
+4
+```
+
+outside the function.
+
+---
+
+# Step 6 — Store Returned Value
+
+```python
+z = f(x)
+```
+
+Returned value:
+
+```text
+4
+```
+
+gets stored in:
+
+```text
+z
+```
+
+So:
+
+```text
+z = 4
+```
+
+---
+
+# Step 7 — Outside x Remains Same
+
+```python
+print("outside x =", x)
+```
+
+Outside x was never changed.
+
+So outside value is still:
+
+```text
+x = 3
+```
+
+---
+
+# Final Output
+
+```text
+in f(x): x = 4
+outside x = 3
+z = 4
+```
+
+---
+
+# Most Important Understanding
+
+Inside function:
+
+```text
+x became 4
+```
+
+Outside function:
+
+```text
+x remained 3
+```
+
+because:
+
+* inside function = local scope
+* outside function = global scope
+
+They are separate environments.
+
+---
+
+# Simplest Analogy
+
+Think of:
+
+* outside function = Notebook A
+* inside function = Notebook B
+
+Changing Notebook B does not automatically change Notebook A.
+
+---
+
+# Connection With Mathematical Functions
+
+Mathematical function:
+
+```text
+f(x) = x + 1
+```
+
+Programming version:
+
+```python
+def f(x):
+    return x + 1
+```
+
+Both:
+
+* take input
+* apply rule
+* produce output
+
+---
+
+# Important Beginner Confusions Clarified
+
+## Why is x inside different from outside x?
+
+Because functions create temporary local variables.
+
+---
+
+## Why does z become 4?
+
+Because:
+
+```python
+return x
+```
+
+returns the inside value:
+
+```text
+4
+```
+
+and stores it in z.
+
+---
+
+## Why outside x remains 3?
+
+Because the outside variable was never modified directly.
+
+---
+
+# Core Concept of This Lecture
+
+Functions create separate local workspaces.
+
+Changes inside the function stay local unless returned or explicitly modified outside.
+ Step 1
+x = 3
+
+Outside function:
+
+x has value 3
+
+This is called:
+
+global scope
+
+(outside function)
+
+ Step 2
+z = f(x)
+
+means:
+
+call function f
+and send x inside
+
+Current x is:
+
+3
+
+So function receives:
+
+x = 3
+
+inside function.
+
+ VERY IMPORTANT
+
+Now a NEW function environment is created.
+
+MIT calls this:
+
+new frame/scope
+🔹 Think like separate room
+
+Outside function:
+
+Room A
+
+Inside function:
+
+Room B
+
+Variables inside Room B
+do not permanently change Room A automatically.
+
+ Step 3
+
+Inside function:
+
+x = x + 1
+
+Current inside-function x is:
+
+3
+
+So:
+
+x = 3 + 1
+
+becomes:
+
+x = 4
+ Step 4
+print('in f(x): x =', x)
+
+prints:
+
+in f(x): x = 4
+ Step 5
+return x
+
+returns:
+
+4
+ Step 6
+z = f(x)
+
+means returned value goes into:
+
+z
+
+So finally:
+
+z = 4
+In mathematics
+
+You studied things like:
+
+f(x) = x²
+
+Meaning:
+
+input x
+apply rule
+get output
+
+Example:
+
+f(3) = 9
+
+because:
+
+3² = 9
+
