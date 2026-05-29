@@ -4844,3 +4844,221 @@ because:
 
 3² = 9
 
+29-05-2026
+
+# Lecture 4 — Variable Scope in Python
+
+## Main Idea
+
+A function creates its own temporary local workspace.
+
+Variables inside the function are separate from variables outside the function.
+
+---
+
+# Example Code
+
+```python id="pq2m4x"
+def f(x):
+    x = x + 1
+    print('in f(x): x =', x)
+    return x
+
+x = 3
+z = f(x)
+```
+
+---
+
+# Step-by-Step Understanding
+
+## Step 1 — Outside Variable
+
+```python id="mk7p1v"
+x = 3
+```
+
+Outside the function:
+
+```text id="xn4r8p"
+x = 3
+```
+
+This is called:
+
+* global scope
+* outside variable
+
+---
+
+# Step 2 — Function Call
+
+```python id="qw9m2r"
+z = f(x)
+```
+
+Meaning:
+
+> send outside value of x inside the function.
+
+Current outside value:
+
+```text id="tv1m8q"
+3
+```
+
+So inside function:
+
+```text id="pk6n2w"
+x = 3
+```
+
+---
+
+# Step 3 — Inside Function
+
+```python id="dr8m4p"
+x = x + 1
+```
+
+Python calculates:
+
+```python id="fw2m7t"
+x = 3 + 1
+```
+
+So inside-function x becomes:
+
+```text id="mz5p1r"
+4
+```
+
+IMPORTANT:
+
+This changes ONLY the inside-function x.
+
+Outside x is still:
+
+```text id="xy7m2n"
+3
+```
+
+---
+
+# Step 4 — Print Inside Value
+
+```python id="rq3m8p"
+print('in f(x): x =', x)
+```
+
+Output:
+
+```text id="bn9m1q"
+in f(x): x = 4
+```
+
+---
+
+# Step 5 — Return Value
+
+```python id="tu4m2p"
+return x
+```
+
+Current inside value:
+
+```text id="cm7p1r"
+4
+```
+
+So Python returns:
+
+```text id="lk8m2v"
+4
+```
+
+---
+
+# Step 6 — Store Returned Value
+
+```python id="vm1q8r"
+z = f(x)
+```
+
+Returned value becomes:
+
+```text id="zr4m2p"
+z = 4
+```
+
+---
+
+# Final Values
+
+## Global Scope (outside function)
+
+| Variable | Value |
+| -------- | ----- |
+| x        | 3     |
+| z        | 4     |
+
+---
+
+## Function Scope (inside function)
+
+| Variable | Value |
+| -------- | ----- |
+| x        | 4     |
+
+---
+
+# Core Concept
+
+Even though both variables are named:
+
+```text id="dp7m2q"
+x
+```
+
+they are different because:
+
+* one exists outside function
+* one exists inside function
+
+---
+
+# Simplest Analogy
+
+Think of:
+
+* outside function = original notebook
+* inside function = temporary working notebook
+
+Changing temporary notebook does not automatically change original notebook.
+
+---
+
+# Connection With Mathematics
+
+Mathematical function:
+
+```text id="mk9r1v"
+f(x) = x + 1
+```
+
+Python version:
+
+```python id="rq6m2p"
+def f(x):
+    return x + 1
+```
+
+Both:
+
+* take input
+* apply rule
+* produce output
+
+
+
+
