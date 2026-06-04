@@ -5058,7 +5058,80 @@ Both:
 * take input
 * apply rule
 * produce output
+* 
 
+4 June 2026
+def square(x):
+    return x*x
 
+print(square(5))
+Step 1: Define the function
+def square(x):
+
+means:
+
+Create a machine called square.
+It accepts one input called x.
+
+Nothing runs yet. Python is just remembering the machine.
+
+Step 2: Function body
+return x*x
+
+means:
+
+Take x
+Multiply it by itself
+Give the answer back
+Step 3: Call the function
+square(5)
+
+means:
+
+Put 5 into x
+
+So inside the function:
+
+x = 5
+Step 4: Execute the return
+return x*x
+
+becomes:
+
+return 5*5
+
+becomes:
+
+return 25
+
+Now the function sends 25 back outside.
+
+Step 5: Replace the function call
+
+Python now sees:
+
+print(square(5))
+
+as:
+
+print(25)
+
+Output:
+
+25
+The flow
+square(5)
+    ↓
+x = 5
+    ↓
+x*x
+    ↓
+25
+    ↓
+return 25
+    ↓
+print(25)
+    ↓
+25
 
 
