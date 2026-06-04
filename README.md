@@ -5134,4 +5134,58 @@ print(25)
     ↓
 25
 
+One more example
+def square(x):
+    return x*x
+
+y = square(8)
+
+print(y)
+
+What happens?
+
+x = 8
+↓
+8*8
+↓
+64
+↓
+return 64
+↓
+y = 64
+↓
+print(y)
+↓
+64
+
+Notice how this is exactly the same pattern as the earlier scope example:
+
+Inside function
+↓
+Compute answer
+↓
+return answer
+↓
+Store outside variable
+
+The only difference is:
+
+Earlier: return 4 → z = 4
+Now: return 25 → y = 25
+
+Before moving on, answer this:
+
+If we write
+
+def square(x):
+    return x*x
+
+a = square(3)
+b = square(4)
+
+print(a)
+print(b)
+
+what will a and b contain? Try to reason it out without running the code.
+
 
