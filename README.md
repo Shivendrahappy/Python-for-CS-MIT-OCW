@@ -5368,5 +5368,122 @@ Main idea:
 
 Function can receive another function.
 
+PIZZA ANALOGY EXAMPLE PROPERLY 
+def make_pizza():
+    print("pizza")
+
+food = make_pizza()
+
+print(food)
+
+You see:
+
+pizza
+None
+
+and think:
+
+Why two outputs??
+
+Because there are actually two different print actions.
+
+Let's trace.
+
+Step 1
+
+Run:
+
+food = make_pizza()
+
+Inside function:
+
+print("pizza")
+
+Output:
+
+pizza
+
+Kitchen shouted:
+
+Pizza ready!
+
+But nobody handed pizza to customer.
+
+Step 2
+
+Function ends.
+
+No return.
+
+Python automatically does:
+
+return None
+
+So:
+
+food = None
+Step 3
+
+Now:
+
+print(food)
+
+means:
+
+print(None)
+
+Output:
+
+None
+
+Final screen:
+
+pizza
+None
+
+BUT—
+
+these come from DIFFERENT places.
+
+pizza ← first print inside function
+
+None ← second print outside function
+
+Restaurant:
+
+Kitchen:
+"PIZZA READY!"
+↓
+(no delivery)
+↓
+Customer asks:
+Where is my pizza?
+↓
+Answer:
+None
+
+Now compare with:
+
+def make_pizza():
+    return "pizza"
+
+food = make_pizza()
+
+print(food)
+
+Output:
+
+pizza
+
+Only one output.
+
+Because:
+
+pizza returned
+↓
+food stores pizza
+↓
+print(food)
+
 
 
