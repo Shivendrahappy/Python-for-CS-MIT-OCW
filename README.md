@@ -5188,4 +5188,185 @@ print(b)
 
 what will a and b contain? Try to reason it out without running the code.
 
+MIT 6.0001 — Tonight Notes
+
+TOPIC: print, return, function name, running function
+
+1. Function = Machine
+
+Code:
+
+def hello():
+print("hello")
+
+Meaning:
+
+Create machine called hello.
+
+Nothing happens yet.
+
+2. Run Function
+
+Code:
+
+hello()
+
+Meaning:
+
+Start machine.
+
+Output:
+
+hello
+
+Flow:
+
+Create machine
+↓
+Run machine
+↓
+Get output
+
+3. Quotes vs Function Name
+
+"hello"
+
+=
+
+TEXT
+
+hello
+
+=
+
+Machine name
+
+hello()
+
+=
+
+Run machine
+
+Example:
+
+print("hello")
+
+Output:
+
+hello
+
+Example:
+
+hello()
+
+Output:
+
+Runs function hello
+
+4. return vs print
+
+Code:
+
+def make_pizza():
+print("pizza")
+
+food = make_pizza()
+
+print(food)
+
+Execution:
+
+make_pizza()
+↓
+
+print("pizza")
+
+Output:
+
+pizza
+
+↓
+
+No return
+
+↓
+
+food = None
+
+↓
+
+print(food)
+
+Output:
+
+None
+
+Final output:
+
+pizza
+None
+
+Reason:
+
+# pizza
+
+printed inside
+
+# None
+
+returned automatically
+
+5. Functions as input
+
+Code:
+
+def hello():
+print("hello")
+
+def run(f):
+return f()
+
+run(hello)
+
+Meaning:
+
+# run
+
+machine name
+
+# f
+
+input
+
+Input can be another function.
+
+Execution:
+
+run(hello)
+
+↓
+
+f = hello
+
+↓
+
+f()
+
+↓
+
+hello()
+
+↓
+
+print("hello")
+
+Output:
+
+hello
+
+Main idea:
+
+Function can receive another function.
+
+
 
