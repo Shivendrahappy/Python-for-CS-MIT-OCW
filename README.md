@@ -5485,5 +5485,367 @@ food stores pizza
 ↓
 print(food)
 
+# Coding Session — 16 June
+
+Topic:
+Functions as Arguments | print vs return
+
+Duration:
+~1 hour
+
+## What I revised
+
+### 1. Function = Machine
+
+```python
+def func_a():
+    print("inside func_a")
+```
+
+Only creates machine.
+
+Nothing runs.
+
+### 2. Brackets decide execution
+
+```python
+func_a
+```
+
+=
+pass machine
+
+No execution
+
+```python
+func_a()
+```
+
+=
+run machine
+
+### 3. print vs return
+
+```python
+print()
+```
+
+shows output
+
+```python
+return
+```
+
+sends value outside
+
+Example:
+
+```python
+print(func_a())
+```
+
+Output:
+
+inside func_a
+None
+
+Reason:
+
+inside func_a
+→ printed
+
+None
+→ no return
+
+### 4. Function as Input
+
+MIT Example:
+
+```python
+def func_c(z):
+    return z()
+```
+
+Meaning:
+
+Receive machine
+
+Run machine
+
+Example:
+
+```python
+func_c(func_a)
+```
+
+Process:
+
+func_a
+↓
+
+z = func_a
+
+↓
+
+z()
+
+↓
+
+func_a()
+
+### 5. Important Difference
+
+```python
+func_a
+```
+
+≠
+
+```python
+func_a()
+```
+
+Recipe Analogy:
+
+# func_a
+
+give recipe
+
+# func_a()
+
+cook recipe
+
+### 6. Mistake learned today
+
+Wrong assumption:
+
+```python
+print(func_a)
+```
+
+Output = 5
+
+Correct:
+
+Shows function object
+
+Need brackets:
+
+```python
+print(func_a())
+```
+
+## Session Result
+
+Questions solved:
+4 / 6
+
+Main understanding gained:
+
+Functions can be passed before being executed.
+## MIT Example — Full Trace
+
+Code:
+
+```python
+def func_a():
+    print('inside func_a')
+
+def func_b(y):
+    print('inside func_b')
+    return y
+
+def func_c(z):
+    print('inside func_c')
+    return z()
+
+print(func_a())
+print(5 + func_b(2))
+print(func_c(func_a))
+```
+
+---
+
+### Trace 1
+
+```python
+print(func_a())
+```
+
+Execution:
+
+func_a()
+
+↓
+
+print("inside func_a")
+
+↓
+
+Output:
+
+inside func_a
+
+↓
+
+No return
+
+↓
+
+return None
+
+↓
+
+print(None)
+
+Final Output:
+
+inside func_a
+None
+
+Meaning:
+
+Function ran
+
+No value returned
+
+---
+
+### Trace 2
+
+```python
+print(5 + func_b(2))
+```
+
+Execution:
+
+func_b(2)
+
+↓
+
+y = 2
+
+↓
+
+print("inside func_b")
+
+↓
+
+return y
+
+↓
+
+return 2
+
+↓
+
+5 + 2
+
+↓
+
+print(7)
+
+Final Output:
+
+inside func_b
+7
+
+Meaning:
+
+Function returned value outside
+
+---
+
+### Trace 3
+
+```python
+print(func_c(func_a))
+```
+
+Execution:
+
+func_c(func_a)
+
+↓
+
+z = func_a
+
+↓
+
+print("inside func_c")
+
+↓
+
+return z()
+
+↓
+
+return func_a()
+
+↓
+
+print("inside func_a")
+
+↓
+
+No return
+
+↓
+
+return None
+
+↓
+
+print(None)
+
+Final Output:
+
+inside func_c
+inside func_a
+None
+
+Meaning:
+
+func_a
+
+↓
+
+passed
+
+↓
+
+executed later inside func_c
+
+---
+
+### Important Difference
+
+```python
+func_a
+```
+
+=
+
+pass function
+
+```python
+func_a()
+```
+
+=
+
+execute function
+
+Recipe Analogy:
+
+func_a
+
+=
+give recipe
+
+func_a()
+
+=
+cook recipe
 
 
