@@ -5849,3 +5849,388 @@ func_a()
 cook recipe
 
 
+2-7 - 2026
+
+
+# MIT Python Lecture 4
+
+# Tuples
+
+## What is a Tuple?
+
+A tuple is an **ordered sequence of elements**.
+
+Properties:
+
+* Ordered
+* Can store different data types
+* Immutable (cannot be changed after creation)
+* Written using parentheses `()`
+
+---
+
+## Empty Tuple
+
+```python
+te = ()
+
+print(te)
+```
+
+Output
+
+```text
+()
+```
+
+---
+
+## Creating a Tuple
+
+```python
+t = (2, "mit", 3)
+
+print(t)
+```
+
+Output
+
+```text
+(2, 'mit', 3)
+```
+
+Python stores the elements like this:
+
+```text
+Index
+
+0        1        2
+-----------------------
+2      "mit"      3
+```
+
+Remember:
+
+Python indexing always starts from **0**.
+
+---
+
+## Accessing an Element
+
+```python
+print(t[0])
+```
+
+Output
+
+```text
+2
+```
+
+Explanation:
+
+`t[0]` means
+
+> Give me the element stored at index 0.
+
+---
+
+## Slicing
+
+General Rule
+
+```python
+[start : stop]
+```
+
+Python reads it as:
+
+```text
+Start from "start"
+
+Stop BEFORE "stop"
+```
+
+### Example 1
+
+```python
+print(t[0:2])
+```
+
+Python takes:
+
+```text
+Index 0 ✓
+
+Index 1 ✓
+
+Index 2 ✗ (stop before 2)
+```
+
+Output
+
+```python
+(2, "mit")
+```
+
+---
+
+### Example 2
+
+```python
+print(t[1:3])
+```
+
+Python takes:
+
+```text
+Index 1 ✓
+
+Index 2 ✓
+
+Stop before 3
+```
+
+Output
+
+```python
+("mit", 3)
+```
+
+---
+
+### Example 3
+
+```python
+print(t[1:2])
+```
+
+Python takes only
+
+```text
+Index 1
+```
+
+Output
+
+```python
+("mit",)
+```
+
+Notice the comma.
+
+A tuple with one element keeps a comma to tell Python it is still a tuple.
+
+---
+
+## Joining Tuples
+
+```python
+print((2, "mit", 3) + (5, 6))
+```
+
+Output
+
+```python
+(2, "mit", 3, 5, 6)
+```
+
+Meaning:
+
+Python joins both tuples into one larger tuple.
+
+---
+
+## Length of a Tuple
+
+```python
+len(t)
+```
+
+Question I asked:
+
+**What does `len(t)` mean?**
+
+Answer:
+
+It means
+
+> Count how many elements are inside the tuple.
+
+Example
+
+```python
+t = (2, "mit", 3)
+
+print(len(t))
+```
+
+Output
+
+```text
+3
+```
+
+Because there are three elements.
+
+More examples
+
+```python
+len(())
+```
+
+Output
+
+```text
+0
+```
+
+```python
+len((1,2,3,4,5))
+```
+
+Output
+
+```text
+5
+```
+
+### Difference
+
+```python
+t[0]
+```
+
+means
+
+> Give me the first element.
+
+Whereas
+
+```python
+len(t)
+```
+
+means
+
+> Tell me how many elements are inside the tuple.
+
+These are completely different operations.
+
+---
+
+## Immutable
+
+```python
+t = (2, "mit", 3)
+
+t[1] = 4
+```
+
+Output
+
+```text
+TypeError
+```
+
+Reason:
+
+A tuple **cannot be modified** after it is created.
+
+Think of it as a printed menu.
+
+Once printed, you cannot change the items.
+
+---
+
+# Codes Practiced
+
+```python
+te = ()
+print(te)
+```
+
+```python
+t = (2, "mit", 3)
+print(t)
+```
+
+```python
+print(t[0])
+```
+
+```python
+print(t[0:2])
+```
+
+```python
+print(t[1:2])
+```
+
+```python
+print(t[1:3])
+```
+
+```python
+print(t + (5,6))
+```
+
+```python
+print(len(t))
+```
+
+```python
+t[1] = 4
+```
+
+(Expected: TypeError)
+
+---
+
+# Memory Tricks
+
+```text
+Tuple
+
+↓
+
+Ordered collection
+
+↓
+
+Can store different data types
+
+↓
+
+Cannot change (Immutable)
+```
+
+```text
+[start : stop]
+
+↓
+
+Include start
+
+↓
+
+Exclude stop
+```
+
+```text
+len(tuple)
+
+↓
+
+Counts total number of elements
+```
+
+---
+
+## Next Topic
+
+* Lists
+* Difference between Tuples and Lists
+* Mutable vs Immutable
+
+
