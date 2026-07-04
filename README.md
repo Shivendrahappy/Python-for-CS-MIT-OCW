@@ -6233,4 +6233,463 @@ Counts total number of elements
 * Difference between Tuples and Lists
 * Mutable vs Immutable
 
+DATE $ JULY 2026
+
+
+# Tuples (Advanced)
+
+---
+
+# 1. Swapping Variables
+
+## Traditional Method
+
+```python
+x = 5
+y = 10
+
+temp = x
+x = y
+y = temp
+
+print(x)
+print(y)
+```
+
+Output
+
+```text
+10
+5
+```
+
+### Execution
+
+```text
+x = 5
+y = 10
+
+↓
+
+temp = 5
+
+↓
+
+x = 10
+
+↓
+
+y = 5
+```
+
+Python uses a temporary variable (`temp`) to swap values.
+
+---
+
+## Python Shortcut Using Tuples
+
+```python
+x = 5
+y = 10
+
+(x, y) = (y, x)
+
+print(x)
+print(y)
+```
+
+Output
+
+```text
+10
+5
+```
+
+### Execution
+
+Python first creates a temporary tuple.
+
+```text
+(y, x)
+
+↓
+
+(10, 5)
+```
+
+Then Python automatically assigns
+
+```text
+x = 10
+
+y = 5
+```
+
+No temporary variable is needed.
+
+---
+
+## Memory Trick
+
+```text
+(y, x)
+
+↓
+
+Temporary tuple
+
+↓
+
+Assign back to
+
+(x, y)
+```
+
+---
+
+# 2. Returning Multiple Values
+
+Normally a function returns one value.
+
+Example
+
+```python
+def square(x):
+    return x*x
+
+print(square(5))
+```
+
+Output
+
+```text
+25
+```
+
+---
+
+Sometimes we need more than one answer.
+
+MIT Example
+
+```python
+def quotient_and_remainder(x, y):
+    q = x // y
+    r = x % y
+    return (q, r)
+```
+
+---
+
+## Meaning of Operators
+
+```python
+//
+```
+
+means
+
+```text
+Integer Division
+
+(Quotient)
+```
+
+Example
+
+```python
+17 // 5
+```
+
+Output
+
+```text
+3
+```
+
+---
+
+```python
+%
+```
+
+means
+
+```text
+Remainder
+```
+
+Example
+
+```python
+17 % 5
+```
+
+Output
+
+```text
+2
+```
+
+---
+
+# Example 1
+
+```python
+print(quotient_and_remainder(17,5))
+```
+
+Execution
+
+```text
+Function runs
+
+↓
+
+return (3,2)
+
+↓
+
+print((3,2))
+```
+
+Output
+
+```text
+(3, 2)
+```
+
+Meaning
+
+The whole tuple is printed.
+
+---
+
+# Example 2
+
+```python
+quot, rem = quotient_and_remainder(17,5)
+
+print(quot)
+
+print(rem)
+```
+
+Execution
+
+```text
+Function runs
+
+↓
+
+return (3,2)
+
+↓
+
+(quot, rem) = (3,2)
+
+↓
+
+quot = 3
+
+rem = 2
+
+↓
+
+print(quot)
+
+↓
+
+print(rem)
+```
+
+Output
+
+```text
+3
+
+2
+```
+
+Meaning
+
+Python opens the returned tuple and stores each value into separate variables.
+
+---
+
+# Question I Asked
+
+**Why do both examples look the same?**
+
+Answer:
+
+Both examples use the same function.
+
+Both examples use
+
+```python
+return (q, r)
+```
+
+The only difference is what we do with the returned tuple.
+
+### Example 1
+
+```python
+print(quotient_and_remainder(17,5))
+```
+
+We simply **look at the returned tuple**.
+
+Output
+
+```text
+(3,2)
+```
+
+---
+
+### Example 2
+
+```python
+quot, rem = quotient_and_remainder(17,5)
+```
+
+We **open the returned tuple**.
+
+Result
+
+```text
+quot = 3
+
+rem = 2
+```
+
+Then we can use each value separately.
+
+---
+
+# Restaurant Analogy
+
+The function prepares one lunch box.
+
+```python
+return (3,2)
+```
+
+means
+
+```text
+📦
+
+3
+
+2
+```
+
+Example 1
+
+```python
+print(quotient_and_remainder(17,5))
+```
+
+You simply look at the lunch box.
+
+Output
+
+```text
+(3,2)
+```
+
+---
+
+Example 2
+
+```python
+quot, rem = quotient_and_remainder(17,5)
+```
+
+You open the lunch box.
+
+```text
+First item → quot = 3
+
+Second item → rem = 2
+```
+
+---
+
+# Memory Tricks
+
+```text
+Tuple
+
+↓
+
+Can return multiple values
+```
+
+```text
+print(function())
+
+↓
+
+Shows whole returned tuple
+```
+
+```text
+a, b = function()
+
+↓
+
+Stores each returned value separately
+```
+
+```text
+(y, x)
+
+↓
+
+Tuple
+
+↓
+
+Swap variables
+```
+
+---
+
+## Codes Practiced
+
+```python
+x = 5
+y = 10
+
+(x, y) = (y, x)
+
+print(x)
+print(y)
+```
+
+```python
+def quotient_and_remainder(x, y):
+    q = x // y
+    r = x % y
+    return (q, r)
+
+print(quotient_and_remainder(17,5))
+```
+
+```python
+def quotient_and_remainder(x, y):
+    q = x // y
+    r = x % y
+    return (q, r)
+
+quot, rem = quotient_and_remainder(17,5)
+
+print(quot)
+print(rem)
+```
+
 
