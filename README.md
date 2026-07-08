@@ -6693,3 +6693,351 @@ print(rem)
 ```
 
 
+# MIT Python 6.0001 - Lecture 4 Notes
+
+# Variables, Indexes and Understanding `for` Loop
+
+## What is a Variable?
+
+A **variable** is a **named box** that stores a value.
+
+Example:
+
+```python
+x = 5
+```
+
+Think of it like this:
+
+```
+Variable
+   x
+   │
+   ▼
+   5
+```
+
+Here,
+
+* `x` → Variable (box)
+* `5` → Value stored inside the box
+
+Another example:
+
+```python
+name = "Shivendra"
+```
+
+```
+Variable
+ name
+  │
+  ▼
+"Shivendra"
+```
+
+---
+
+## What is an Index?
+
+An **index** is the **position (serial number)** of a value inside a collection like a tuple or list.
+
+Example:
+
+```python
+t = (8, "MIT")
+```
+
+| Index | Value |
+| ----: | ----- |
+|     0 | 8     |
+|     1 | "MIT" |
+
+Examples:
+
+```python
+print(t[0])
+```
+
+Output
+
+```
+8
+```
+
+```python
+print(t[1])
+```
+
+Output
+
+```
+MIT
+```
+
+Remember:
+
+* **Index = Position**
+* **Value = Actual data stored**
+
+---
+
+## Difference Between Variable, Index and Value
+
+Example:
+
+```python
+t = (8, "MIT")
+```
+
+```
+Variable
+
+t
+
+↓
+
+(8, "MIT")
+```
+
+Inside the tuple:
+
+```
+Index 0 → 8
+
+Index 1 → "MIT"
+```
+
+So,
+
+```python
+t[0]
+```
+
+means
+
+> Go to **index 0** and return the value stored there.
+
+Result:
+
+```
+8
+```
+
+---
+
+## Understanding the `for` Loop
+
+Example:
+
+```python
+test = ((1,"a"), (2,"b"), (1,"a"), (7,"b"))
+
+for t in test:
+    print(t)
+```
+
+`test` is one large tuple containing four smaller tuples.
+
+```
+test
+
+├── (1,"a")
+├── (2,"b")
+├── (1,"a")
+└── (7,"b")
+```
+
+Python takes one tuple at a time.
+
+### First iteration
+
+```
+t = (1,"a")
+```
+
+Output
+
+```
+(1,"a")
+```
+
+---
+
+### Second iteration
+
+```
+t = (2,"b")
+```
+
+Output
+
+```
+(2,"b")
+```
+
+---
+
+### Third iteration
+
+```
+t = (1,"a")
+```
+
+Output
+
+```
+(1,"a")
+```
+
+---
+
+### Fourth iteration
+
+```
+t = (7,"b")
+```
+
+Output
+
+```
+(7,"b")
+```
+
+Final Output
+
+```
+(1,"a")
+(2,"b")
+(1,"a")
+(7,"b")
+```
+
+---
+
+## Important Observation
+
+Python **does not create a new variable** every time.
+
+It keeps using the same variable `t`.
+
+Only the **value inside `t` changes**.
+
+Example:
+
+```
+First
+
+t → (1,"a")
+
+↓
+
+Second
+
+t → (2,"b")
+
+↓
+
+Third
+
+t → (1,"a")
+
+↓
+
+Fourth
+
+t → (7,"b")
+```
+
+The variable remains the same.
+
+The value changes.
+
+---
+
+## Accessing Elements Inside Each Tuple
+
+Example:
+
+```python
+for t in test:
+    print(t[0])
+```
+
+Output
+
+```
+1
+2
+1
+7
+```
+
+Reason:
+
+`t[0]` means:
+
+> Return the value stored at index 0 of each tuple.
+
+---
+
+Example:
+
+```python
+for t in test:
+    print(t[1])
+```
+
+Output
+
+```
+a
+b
+a
+b
+```
+
+Reason:
+
+`t[1]` means:
+
+> Return the value stored at index 1 of each tuple.
+
+---
+
+## Restaurant Analogy
+
+Imagine a waiter serving four tables.
+
+```
+Tray
+
+🍕
+🍔
+🥗
+🍜
+```
+
+The waiter uses the **same hand** every time.
+
+Only the food changes.
+
+Similarly,
+
+`t` is the same variable.
+
+The value stored inside `t` changes in every iteration.
+
+---
+
+## What I Learned Today
+
+* Variable = A named box that stores a value.
+* Index = Position (serial number) of a value inside a tuple.
+* Value = The actual data stored.
+* A `for` loop takes one element at a time.
+* The same variable (`t`) is reused in every iteration.
+* `t[0]` means "get the value at index 0".
+* `t[1]` means "get the value at index 1".
+
+These concepts are the foundation for understanding the rest of MIT Python.
