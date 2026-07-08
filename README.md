@@ -7041,3 +7041,357 @@ The value stored inside `t` changes in every iteration.
 * `t[1]` means "get the value at index 1".
 
 These concepts are the foundation for understanding the rest of MIT Python.
+# MIT Python 6.0001 - Lecture 4
+
+# GitHub Notes (8 July 2026)
+
+## Today's Goal
+
+Today I focused on understanding how a `for` loop works instead of rushing through the MIT lecture. I realized that understanding each line is more important than completing the syllabus quickly.
+
+---
+
+# Example
+
+```python
+test = ((10, "A"), (20, "B"))
+
+for t in test:
+    print(t)
+    print(t[0])
+```
+
+Output
+
+```
+(10, 'A')
+10
+(20, 'B')
+20
+```
+
+---
+
+# What is a Variable?
+
+A variable is a **named box** that stores a value.
+
+Example:
+
+```python
+t = (10, "A")
+```
+
+Here,
+
+```
+Variable
+
+t
+↓
+
+(10, "A")
+```
+
+The variable name stays the same, but its value can change.
+
+---
+
+# What is an Index?
+
+An index is the **position (serial number)** of a value inside a tuple or list.
+
+Example:
+
+```
+t = (10, "A")
+
+Index 0 → 10
+Index 1 → "A"
+```
+
+So,
+
+```python
+t[0]
+```
+
+returns
+
+```
+10
+```
+
+and
+
+```python
+t[1]
+```
+
+returns
+
+```
+A
+```
+
+---
+
+# Difference Between Index and Value
+
+Index tells Python **where to look**.
+
+Value is **what is stored** at that position.
+
+Example:
+
+```
+Index 0 → 10
+
+Index 1 → "A"
+```
+
+Here,
+
+* 0 and 1 are indexes.
+* 10 and "A" are values.
+
+---
+
+# Understanding
+
+```python
+for t in test:
+```
+
+This line means:
+
+> Take one tuple at a time from `test` and store it in the variable `t`.
+
+Python automatically changes the value of `t`.
+
+Iteration 1
+
+```
+t = (10, "A")
+```
+
+Iteration 2
+
+```
+t = (20, "B")
+```
+
+I do not write these assignments manually. Python does it automatically.
+
+---
+
+# Important Realization
+
+I asked:
+
+> Does every tuple repeat only for `t[0]`?
+
+Answer:
+
+No.
+
+The **entire indented block** repeats.
+
+Example:
+
+```python
+for t in test:
+    print(t)
+    print(t[0])
+```
+
+Python repeats **both** lines for every tuple.
+
+First tuple
+
+```
+print(t)
+↓
+
+(10, "A")
+
+print(t[0])
+↓
+
+10
+```
+
+Second tuple
+
+```
+print(t)
+↓
+
+(20, "B")
+
+print(t[0])
+↓
+
+20
+```
+
+The loop repeats everything inside it.
+
+---
+
+# Why Use a for Loop?
+
+Instead of writing
+
+```python
+print(test[0])
+print(test[1])
+print(test[2])
+```
+
+a `for` loop works for any number of tuples.
+
+Whether there are 4 tuples or 4,000 tuples, Python automatically visits each one.
+
+---
+
+# Restaurant Analogy
+
+Imagine a waiter serving tables.
+
+```
+Table 1
+↓
+
+Table 2
+↓
+
+Table 3
+↓
+
+Table 4
+```
+
+The waiter uses the **same hand** every time.
+
+Similarly,
+
+`t` is the same variable.
+
+Only the value stored inside `t` changes during each iteration.
+
+---
+
+# Questions I Asked Today
+
+### 1. Why did Python print
+
+```
+(10, 'A')
+```
+
+instead of
+
+```
+(10, "A")
+```
+
+Answer:
+
+Single quotes and double quotes both represent strings in Python.
+
+Python chooses how to display them. The value remains exactly the same.
+
+---
+
+### 2. Why do we write
+
+```python
+for t in test:
+```
+
+Answer:
+
+It tells Python to go through every tuple in `test` one at a time.
+
+Python automatically stores each tuple into `t`.
+
+---
+
+### 3. Does every tuple repeat only for `t[0]`?
+
+Answer:
+
+No.
+
+The loop repeats the **entire block** inside the `for` loop.
+
+`t[0]` is only one operation performed during each iteration.
+
+---
+
+# Coding Practice
+
+```python
+test = ((10, "A"), (20, "B"))
+
+for t in test:
+    print(t)
+```
+
+Output
+
+```
+(10, 'A')
+(20, 'B')
+```
+
+---
+
+```python
+test = ((10, "A"), (20, "B"))
+
+for t in test:
+    print(t[0])
+```
+
+Output
+
+```
+10
+20
+```
+
+---
+
+```python
+test = ((10, "A"), (20, "B"))
+
+for t in test:
+    print(t)
+    print(t[0])
+```
+
+Output
+
+```
+(10, 'A')
+10
+(20, 'B')
+20
+```
+
+---
+
+# What I Learned Today
+
+* A variable is a named box that stores a value.
+* An index is the position of a value inside a tuple or list.
+* `t[0]` means "get the value stored at index 0."
+* Python automatically changes the value of `t` during each iteration.
+* A `for` loop repeats the **entire indented block**, not just one line.
+* Understanding each line deeply is better than rushing to finish the syllabus.
+
+**Personal Reflection**
+
+I realized my best way of learning is to break down every line of code and ask "Why?" instead of rushing through lectures. During my first month I tried to finish the syllabus quickly and forgot most of it. When I slowed down and understood one concept at a time, Python started making sense. I will continue learning this way because understanding is more valuable than simply completing the course.
