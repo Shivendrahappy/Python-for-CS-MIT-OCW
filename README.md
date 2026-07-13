@@ -7395,3 +7395,364 @@ Output
 **Personal Reflection**
 
 I realized my best way of learning is to break down every line of code and ask "Why?" instead of rushing through lectures. During my first month I tried to finish the syllabus quickly and forgot most of it. When I slowed down and understood one concept at a time, Python started making sense. I will continue learning this way because understanding is more valuable than simply completing the course.
+
+
+# MIT Python 6.0001 – Lecture 4
+
+## GitHub Notes (13 July 2026)
+
+# Topic
+
+Understanding `t[1]`, `if`, `not in`, and building the `words` tuple.
+
+---
+
+# Revision of Previous Concept
+
+Suppose
+
+```python
+nums = ()
+t = (5, "MIT")
+```
+
+I already understood:
+
+```python
+t[0]
+```
+
+evaluates to
+
+```python
+5
+```
+
+Then
+
+```python
+(t[0],)
+```
+
+becomes
+
+```python
+(5,)
+```
+
+Finally,
+
+```python
+nums = nums + (t[0],)
+```
+
+becomes
+
+```python
+nums = () + (5,)
+```
+
+Result
+
+```python
+nums = (5,)
+```
+
+The empty tuple simply stores the first number.
+
+---
+
+# New Concept
+
+Suppose
+
+```python
+t = (5, "MIT")
+```
+
+The tuple contains
+
+| Index | Value |
+| ----: | ----- |
+|     0 | 5     |
+|     1 | "MIT" |
+
+Therefore,
+
+```python
+t[1]
+```
+
+returns
+
+```python
+"MIT"
+```
+
+---
+
+# Understanding
+
+```python
+if t[1] not in words:
+```
+
+Suppose
+
+```python
+words = ()
+```
+
+Python asks:
+
+> Is `"MIT"` already inside the empty tuple?
+
+Answer:
+
+No.
+
+Therefore,
+
+```python
+if "MIT" not in ():
+```
+
+is
+
+```python
+True
+```
+
+So Python enters the `if` block.
+
+---
+
+# Adding the Word
+
+The next line is
+
+```python
+words = words + (t[1],)
+```
+
+Python replaces
+
+```python
+t[1]
+```
+
+with
+
+```python
+"MIT"
+```
+
+So the line becomes
+
+```python
+words = () + ("MIT",)
+```
+
+Result
+
+```python
+words = ("MIT",)
+```
+
+---
+
+# Why Use the if Statement?
+
+Suppose later
+
+```python
+words = ("MIT",)
+
+t = (10, "MIT")
+```
+
+Python checks
+
+```python
+if t[1] not in words
+```
+
+which becomes
+
+```python
+if "MIT" not in ("MIT",)
+```
+
+Answer
+
+```python
+False
+```
+
+Therefore,
+
+Python skips
+
+```python
+words = words + (t[1],)
+```
+
+The tuple remains
+
+```python
+("MIT",)
+```
+
+This prevents duplicate words.
+
+---
+
+# Complete Idea
+
+The program separates numbers and words.
+
+Example
+
+```python
+aTuple = (
+    (5, "MIT"),
+    (8, "Python"),
+    (10, "MIT")
+)
+```
+
+Numbers collected
+
+```python
+(5, 8, 10)
+```
+
+Words collected
+
+```python
+("MIT", "Python")
+```
+
+Notice that numbers can repeat, but duplicate words are ignored.
+
+---
+
+# What I Learned Today
+
+* `t[1]` returns the second value of a tuple.
+* `not in` checks whether a value already exists.
+* `if` executes its block only when the condition is `True`.
+* The program stores only unique words.
+* `nums` collects numbers.
+* `words` collects unique strings.
+
+---
+
+# Coding Practice
+
+### Practice 1
+
+Predict the output.
+
+```python
+t = (9, "AI")
+
+print(t[0])
+print(t[1])
+```
+
+---
+
+### Practice 2
+
+Predict the final value of `nums`.
+
+```python
+nums = ()
+
+t = (7, "Python")
+
+nums = nums + (t[0],)
+
+print(nums)
+```
+
+---
+
+### Practice 3
+
+Predict the final value of `words`.
+
+```python
+words = ()
+
+t = (7, "Python")
+
+words = words + (t[1],)
+
+print(words)
+```
+
+---
+
+### Practice 4
+
+Will the `if` statement execute?
+
+```python
+words = ("MIT",)
+
+t = (5, "MIT")
+
+if t[1] not in words:
+    words = words + (t[1],)
+
+print(words)
+```
+
+Explain why.
+
+---
+
+### Practice 5
+
+Predict the final values of both variables.
+
+```python
+test = (
+    (1, "A"),
+    (2, "B"),
+    (3, "A")
+)
+
+nums = ()
+words = ()
+
+for t in test:
+    nums = nums + (t[0],)
+
+    if t[1] not in words:
+        words = words + (t[1],)
+
+print(nums)
+print(words)
+```
+
+---
+
+# Personal Reflection
+
+Today I understood that the code is not complicated when it is broken into very small steps. The line
+
+```python
+words = words + (t[1],)
+```
+
+uses exactly the same idea as
+
+```python
+nums = nums + (t[0],)
+```
+
+The only difference is that one collects numbers and the other collects unique words. I also realized that MIT combines multiple concepts into one line, so my best way of learning is to break each line into smaller parts before putting it back together.
+
