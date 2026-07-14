@@ -7755,4 +7755,273 @@ nums = nums + (t[0],)
 ```
 
 The only difference is that one collects numbers and the other collects unique words. I also realized that MIT combines multiple concepts into one line, so my best way of learning is to break each line into smaller parts before putting it back together.
+# MIT Python 6.0001 – Tuple Practice (Tracing the Loop)
+
+## Example
+
+```python
+test = (
+    (1, "A"),
+    (2, "B"),
+    (3, "A")
+)
+
+nums = ()
+words = ()
+
+for t in test:
+    nums = nums + (t[0],)
+
+    if t[1] not in words:
+        words = words + (t[1],)
+
+    print(nums)
+    print(words)
+```
+
+---
+
+# Initial State
+
+```
+nums = ()
+words = ()
+```
+
+---
+
+# First Iteration
+
+Current tuple
+
+```python
+t = (1, "A")
+```
+
+### Number
+
+```
+t[0] → 1
+```
+
+```
+nums = () + (1,)
+```
+
+Result
+
+```
+nums = (1,)
+```
+
+### Word
+
+```
+t[1] → "A"
+```
+
+Current words
+
+```
+()
+```
+
+Is `"A"` already present?
+
+No.
+
+So Python adds it.
+
+```
+words = ("A",)
+```
+
+Output
+
+```
+nums  = (1,)
+words = ("A",)
+```
+
+---
+
+# Second Iteration
+
+Current tuple
+
+```python
+t = (2, "B")
+```
+
+### Number
+
+```
+t[0] → 2
+```
+
+```
+nums = (1,) + (2,)
+```
+
+Result
+
+```
+(1,2)
+```
+
+### Word
+
+```
+t[1] → "B"
+```
+
+Current words
+
+```
+("A",)
+```
+
+Is `"B"` already present?
+
+No.
+
+Python adds it.
+
+```
+words = ("A","B")
+```
+
+Output
+
+```
+nums  = (1,2)
+words = ("A","B")
+```
+
+---
+
+# Third Iteration
+
+Current tuple
+
+```python
+t = (3,"A")
+```
+
+### Number
+
+```
+t[0] → 3
+```
+
+```
+nums = (1,2) + (3,)
+```
+
+Result
+
+```
+(1,2,3)
+```
+
+### Word
+
+```
+t[1] → "A"
+```
+
+Current words
+
+```
+("A","B")
+```
+
+Python asks:
+
+> Is `"A"` already inside `("A","B")`?
+
+Answer:
+
+Yes.
+
+Therefore
+
+```
+if t[1] not in words
+```
+
+becomes
+
+```
+if False
+```
+
+Python skips
+
+```python
+words = words + (t[1],)
+```
+
+Words remain
+
+```
+("A","B")
+```
+
+---
+
+# Final Output
+
+```
+nums
+
+↓
+
+(1,2,3)
+```
+
+```
+words
+
+↓
+
+("A","B")
+```
+
+---
+
+# Important Lesson
+
+Numbers are always added.
+
+Words are added **only if they do not already exist**.
+
+This is why the final result is
+
+```
+("A","B")
+```
+
+instead of
+
+```
+("A","B","A")
+```
+
+The purpose of the `if` statement is to avoid duplicate words.
+
+---
+
+# Personal Learning Insight
+
+I understood this example only after tracing every iteration on paper.
+
+The code felt similar to balancing chemical reactions:
+
+* Start with an initial state.
+* Apply one rule.
+* Observe the new state.
+* Repeat until the final result is obtained.
+
+This tracing method matches my learning style much better than reading the complete code at once.
 
