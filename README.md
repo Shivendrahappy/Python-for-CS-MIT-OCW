@@ -8023,5 +8023,129 @@ The code felt similar to balancing chemical reactions:
 * Observe the new state.
 * Repeat until the final result is obtained.
 
-This tracing method matches my learning style much better than reading the complete code at once.
+This tracing method matches my learning style much better than reading the complete code at once.# Practice – `min()` and `max()`
+
+## Code 1 – Basic Practice
+
+```python
+nums = (15, 2, 9, 21, 6)
+
+print(min(nums))
+print(max(nums))
+```
+
+### Before Running the Code
+
+Predict:
+
+* What is the smallest number?
+* What is the largest number?
+
+Then run the program and compare your answer.
+
+Expected Output
+
+```python
+2
+21
+```
+
+---
+
+## Code 2 – Using Variables
+
+```python
+nums = (8, 12, 3, 19, 7)
+
+min_n = min(nums)
+max_n = max(nums)
+
+print("Numbers :", nums)
+print("Minimum :", min_n)
+print("Maximum :", max_n)
+```
+
+Expected Output
+
+```python
+Numbers : (8, 12, 3, 19, 7)
+Minimum : 3
+Maximum : 19
+```
+
+---
+
+## Code 3 – Same Style as MIT
+
+```python
+nums = ()
+
+nums = nums + (10,)
+nums = nums + (4,)
+nums = nums + (15,)
+nums = nums + (7,)
+
+print(nums)
+
+print("Minimum =", min(nums))
+print("Maximum =", max(nums))
+```
+
+### Step-by-Step Trace
+
+```text
+Start
+
+()
+
+↓
+
+(10,)
+
+↓
+
+(10, 4)
+
+↓
+
+(10, 4, 15)
+
+↓
+
+(10, 4, 15, 7)
+```
+
+Python then checks every number.
+
+Smallest → `4`
+
+Largest → `15`
+
+Output
+
+```python
+(10, 4, 15, 7)
+Minimum = 4
+Maximum = 15
+```
+
+---
+
+## Key Points
+
+* `min()` returns the smallest value in a tuple.
+* `max()` returns the largest value in a tuple.
+* They **do not modify** the tuple.
+* They only return one value, which can be stored in a variable.
+
+Example
+
+```python
+nums = (5, 8, 10)
+
+min_n = min(nums)   # 5
+max_n = max(nums)   # 10
+```
+
+
 
