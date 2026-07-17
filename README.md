@@ -8147,5 +8147,299 @@ min_n = min(nums)   # 5
 max_n = max(nums)   # 10
 ```
 
+# MIT Python 6.0001 – Lists (Part 1)
+
+## What is a List?
+
+A list is an **ordered collection of values**.
+
+It is written using **square brackets `[ ]`**.
+
+Example:
+
+```python
+L = [2, 'a', 4]
+```
+
+A list is similar to a tuple, but there is one major difference:
+
+* **Tuple** → Immutable (cannot change)
+* **List** → Mutable (can change)
+
+---
+
+# Empty List
+
+```python
+a_list = []
+```
+
+This creates an empty list.
+
+Just as
+
+```python
+nums = ()
+```
+
+creates an empty tuple,
+
+```python
+[]
+```
+
+creates an empty list.
+
+---
+
+# Example
+
+```python
+L = [2, 'a', 4, [1,2]]
+```
+
+Visualize the list as boxes.
+
+```text
+Index
+
+0        1        2         3
+│        │        │         │
+2       'a'       4      [1,2]
+```
+
+Notice that the last element is itself another list.
+
+A list can contain another list.
+
+---
+
+# Length of a List
+
+```python
+len(L)
+```
+
+Python counts only the **top-level elements**.
+
+They are:
+
+* 2
+* 'a'
+* 4
+* [1,2]
+
+Therefore,
+
+```python
+len(L)
+```
+
+returns
+
+```python
+4
+```
+
+Even though `[1,2]` contains two numbers, it is counted as **one element**.
+
+---
+
+# Accessing Elements
+
+```python
+L[0]
+```
+
+returns
+
+```python
+2
+```
+
+---
+
+```python
+L[2]
+```
+
+returns
+
+```python
+4
+```
+
+Therefore,
+
+```python
+L[2] + 1
+```
+
+becomes
+
+```python
+4 + 1
+```
+
+Result
+
+```python
+5
+```
+
+---
+
+# List Inside a List
+
+```python
+L[3]
+```
+
+does **not** return
+
+```python
+1
+```
+
+It returns the **entire list**
+
+```python
+[1,2]
+```
+
+because index 3 stores another list.
+
+---
+
+# Index Error
+
+```python
+L[4]
+```
+
+produces
+
+```text
+IndexError
+```
+
+Reason:
+
+The list contains only **4 elements**.
+
+Indexes are
+
+```text
+0
+1
+2
+3
+```
+
+There is **no index 4**.
+
+---
+
+# Important Rule
+
+If
+
+```python
+len(L) = 4
+```
+
+then the last valid index is
+
+```text
+3
+```
+
+General Rule
+
+```text
+Last Index = Length - 1
+```
+
+Examples
+
+| Length | Last Valid Index |
+| ------ | ---------------- |
+| 1      | 0                |
+| 2      | 1                |
+| 3      | 2                |
+| 4      | 3                |
+| 5      | 4                |
+
+---
+
+# Practice Code
+
+### Practice 1
+
+```python
+L = [5, 8, 10]
+
+print(L[0])
+print(L[1])
+print(L[2])
+```
+
+Predict the output before running.
+
+---
+
+### Practice 2
+
+```python
+L = [5, 8, 10]
+
+print(len(L))
+```
+
+---
+
+### Practice 3
+
+```python
+L = [2, 'a', 4, [1,2]]
+
+print(L[3])
+```
+
+Question:
+
+Does it print
+
+```python
+1
+```
+
+or
+
+```python
+[1,2]
+```
+
+Explain why.
+
+---
+
+### Practice 4
+
+```python
+L = [10, 20, 30, 40]
+
+print(L[4])
+```
+
+Predict the error before running the program.
+
+---
+
+# Personal Reflection
+
+Lists feel very similar to tuples because both use indexes starting from 0. The biggest difference is that lists use square brackets and are mutable. I also learned that a list can contain another list, and that `len()` counts only the top-level elements. Finally, I understood the rule:
+
+**Last Valid Index = Length − 1**
 
 
