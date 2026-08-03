@@ -8336,4 +8336,87 @@ Lists feel very similar to tuples because both use indexes starting from 0. The 
 
 Last Valid Index = Length − 1
 
+MIT Python 6.0001 — Lecture 5 Review (After Illness Restart)
+
+Date: 3 August
+
+Topic: append() and List Growth
+Key Idea
+
+A list is mutable, so it can grow without creating a new list.
+
+memory = []
+
+memory.append("Hello")
+memory.append("How are you?")
+
+print(memory)
+
+Output:
+
+['Hello', 'How are you?']
+How append() Works
+
+append() always adds one new element to the end of the list.
+
+It does not replace existing elements.
+
+Example:
+
+L = [10, 20]
+
+L.append(30)
+
+print(L)
+
+Output:
+
+[10, 20, 30]
+
+Indexes become:
+
+Index:   0    1    2
+Value:  10   20   30
+
+The previous elements keep their positions.
+
+Tuple vs List
+
+Tuple (Immutable):
+
+t = (1, 2)
+t = t + (3,)
+
+Output:
+
+(1, 2, 3)
+
+List (Mutable):
+
+L = [1, 2]
+L.append(3)
+
+Output:
+
+[1, 2, 3]
+Chatbot Connection
+
+Conversation history can be stored like this:
+
+memory = []
+
+memory.append("User: Hello")
+memory.append("Bot: Hi")
+memory.append("User: I like AI.")
+
+Result:
+
+[
+    "User: Hello",
+    "Bot: Hi",
+    "User: I like AI."
+]
+
+This is the first building block of a Long Memory AI Chatbot.
+
 
