@@ -8420,3 +8420,237 @@ Result:
 This is the first building block of a Long Memory AI Chatbot.
 
 
+MIT Python 6.0001 — Lecture 5 (Part 2)
+Topic: Iterating Over Lists and Removing Elements
+
+Date: 4 August
+
+1. Iterating Over a List
+
+There are two common ways to iterate through a list.
+
+Method 1 — Using Index
+L = [5,8,10]
+
+total = 0
+
+for i in range(len(L)):
+    total += L[i]
+
+print(total)
+How it works
+
+range(len(L))
+
+gives
+
+0
+1
+2
+
+Python accesses
+
+L[0]
+L[1]
+L[2]
+
+Output
+
+23
+Method 2 — Using Values Directly
+L = [5,8,10]
+
+total = 0
+
+for i in L:
+    total += i
+
+print(total)
+
+Python directly assigns
+
+Round 1
+
+i = 5
+
+Round 2
+
+i = 8
+
+Round 3
+
+i = 10
+
+Output
+
+23
+Memory Trick
+for i in L
+
+means
+
+Python gives each VALUE directly.
+
+for i in range(len(L))
+
+means
+
+Python gives each INDEX.
+
+Use
+
+L[i]
+
+to obtain the value.
+
+2. Removing Elements From a List
+
+Python provides three different methods.
+
+remove()
+
+Removes by value.
+
+L = [2,1,3,6,3,7,0]
+
+L.remove(2)
+
+Result
+
+[1,3,6,3,7,0]
+
+If multiple copies exist,
+
+L.remove(3)
+
+removes only the first occurrence.
+
+Result
+
+[1,6,3,7,0]
+del
+
+Removes by index.
+
+L = [1,6,3,7,0]
+
+del(L[1])
+
+Python removes whatever is stored at index 1.
+
+Result
+
+[1,3,7,0]
+pop()
+
+Removes the last element and returns it.
+
+L = [1,3,7,0]
+
+x = L.pop()
+
+Now
+
+x
+
+contains
+
+0
+
+and
+
+L
+
+becomes
+
+[1,3,7]
+Difference
+Function	Removes By
+remove(value)	Value
+del(L[index])	Index
+pop()	Last element (returns removed value)
+Chatbot Connection
+
+Conversation memory
+
+memory = []
+
+memory.append("User: Hello")
+
+memory.append("Bot: Hi")
+
+memory.append("User: I like AI")
+
+Undo last message
+
+last_message = memory.pop()
+
+Delete a specific message
+
+memory.remove("User: Hello")
+
+Delete by position
+
+del(memory[0])
+
+These operations are the foundation of conversation memory management.
+
+Practice 1 — Sum Using Index
+L = [3,7,9]
+
+total = 0
+
+for i in range(len(L)):
+    total += L[i]
+
+print(total)
+L = [3,7,9]
+
+total = 0
+
+for i in L:
+    total += i
+
+print(total)Practice 2 — Sum Using Values
+Praactice 3 — remove()
+L = [1,2,3,2,5]
+
+L.remove(2)
+
+print(L)ctice 3 — remove()
+Practice 4 — del
+L = [10,20,30,40]
+
+del(L[1])
+
+print(L)
+Question:
+
+Which value disappears?
+Practice 5 — pop()
+L = [5,10,15,20]
+
+x = L.pop()
+
+print(x)
+print(L)
+Questions:
+
+What is x?
+What is the final list?
+Practice 6 — Chatbot Memory
+memory = []
+
+memory.append("Hello")
+memory.append("I like AI")
+memory.append("TOEFL")
+
+memory.pop()
+
+print(memory)
+Question:
+
+Which memory remains?
+
+
+
