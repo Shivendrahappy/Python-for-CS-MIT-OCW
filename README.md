@@ -8652,5 +8652,431 @@ Question:
 
 Which memory remains?
 
+# MIT 6.0001 — Lecture 5: Tuples, Lists & Mutability
+
+## Lists — Core Concepts
+
+### List iteration
+
+A list can be traversed using:
+
+```python
+for i in range(len(L)):
+    print(L[i])
+```
+
+or directly:
+
+```python
+for e in L:
+    print(e)
+```
+
+The first approach uses the **index**.
+The second directly gives each **element**.
+
+---
+
+## Removing Elements
+
+```python
+L.remove(element)
+```
+
+Removes the first occurrence of the specified element.
+
+```python
+del(L[index])
+```
+
+Deletes the element at a specific index.
+
+```python
+L.pop()
+```
+
+Removes and **returns the last element**.
+
+Example:
+
+```python
+L = [2, 1, 3, 6, 3, 7, 0]
+
+L.remove(2)
+del(L[1])
+x = L.pop()
+```
+
+---
+
+# Converting Lists and Strings
+
+## `list()`
+
+Converts a string into a list of characters.
+
+```python
+s = "I<3 cs"
+
+print(list(s))
+```
+
+Output:
+
+```text
+['I', '<', '3', ' ', 'c', 's']
+```
+
+## `split()`
+
+Splits a string into a list.
+
+```python
+s = "I<3 cs"
+
+print(s.split('<'))
+```
+
+Output:
+
+```text
+['I', '3 cs']
+```
+
+## `join()`
+
+Combines list elements into a string.
+
+```python
+L = ['a', 'b', 'c']
+
+print(''.join(L))
+print('_'.join(L))
+```
+
+Output:
+
+```text
+abc
+a_b_c
+```
+
+---
+
+# Aliases and Mutation
+
+An alias means two variables refer to the **same list**.
+
+```python
+warm = ['red', 'yellow', 'orange']
+colors1 = [warm]
+
+warm.remove('red')
+
+print(colors1)
+```
+
+Changing `warm` is visible through `colors1` because they refer to the same list object.
+
+### Important
+
+```python
+warm = colors1
+```
+
+does **not** create a new copy.
+
+---
+
+# Cloning a List
+
+Use slicing to create a separate copy:
+
+```python
+cool = [1, 2, 3]
+chill = cool[:]
+
+chill.append(4)
+
+print(cool)
+print(chill)
+```
+
+Output:
+
+```text
+[1, 2, 3]
+[1, 2, 3, 4]
+```
+
+`cool` remains unchanged because `chill` is a separate list.
+
+### Memory rule
+
+```python
+cool[:]   # clone/copy
+```
+
+---
+
+# Nested Lists
+
+A list can contain other lists.
+
+```python
+cool = ['blue', 'green']
+warm = ['red', 'yellow', 'orange']
+
+colors1 = [cool]
+colors1.append(warm)
+
+print(colors1)
+```
+
+Output:
+
+```text
+[['blue', 'green'], ['red', 'yellow', 'orange']]
+```
+
+Here `append(warm)` adds the **whole `warm` list as one element**.
+
+---
+
+# Mutation of Nested Lists
+
+```python
+warm.remove('red')
+
+print(warm)
+print(colors1)
+```
+
+Output:
+
+```text
+['yellow', 'orange']
+[['blue', 'green'], ['yellow', 'orange']]
+```
+
+`colors1` changes because it contains the same `warm` list.
+
+---
+
+# Nested-List Iteration
+
+First, the outer loop gets each inner list:
+
+```python
+for e in colors1:
+    print('e =', e)
+```
+
+Example output:
+
+```text
+e = ['blue', 'green']
+e = ['yellow', 'orange']
+```
+
+To go inside those lists:
+
+```python
+for e in colors1:
+    if type(e) == list:
+        for e1 in e:
+            print(e1)
+    else:
+        print(e)
+```
+
+The outer loop finds the inner list; the inner loop processes its elements.
+
+---
+
+# Combining Lists
+
+Two lists can be combined using `+`.
+
+```python
+cool = ['blue', 'green']
+warm = ['red', 'yellow', 'orange']
+
+flat = cool + warm
+
+print(flat)
+```
+
+Output:
+
+```text
+['blue', 'green', 'red', 'yellow', 'orange']
+```
+
+`+` creates a new combined list.
+
+It does **not** create a nested list.
+
+---
+
+# Sorting Lists
+
+## `sort()`
+
+`sort()` changes the **existing list**.
+
+```python
+flat = ['yellow', 'blue', 'red', 'green']
+
+flat.sort()
+
+print(flat)
+```
+
+Output:
+
+```text
+['blue', 'green', 'red', 'yellow']
+```
+
+### Important
+
+```python
+flat.sort()
+```
+
+→ mutates `flat`.
+
+---
+
+## `sorted()`
+
+`sorted()` creates/returns a sorted list.
+
+```python
+flat = ['yellow', 'blue', 'red', 'green']
+
+new_flat = sorted(flat, reverse=True)
+
+print(flat)
+print(new_flat)
+```
+
+Output:
+
+```text
+['yellow', 'blue', 'red', 'green']
+['yellow', 'red', 'green', 'blue']
+```
+
+`reverse=True` means descending/reverse alphabetical order.
+
+### Main difference
+
+```text
+sort()
+→ changes the original list
+
+sorted()
+→ returns a sorted list
+→ original remains unchanged
+```
+
+---
+
+# Indexed Mutation
+
+Lists are mutable.
+
+```python
+cool = ['blue', 'green']
+
+cool[1] = 'black'
+
+print(cool)
+```
+
+Output:
+
+```text
+['blue', 'black']
+```
+
+The element at index `1` was replaced.
+
+---
+
+# Practice Completed
+
+### Practice 1 — Nested lists
+
+```python
+cool = ['blue', 'green']
+warm = ['red', 'yellow', 'orange']
+
+colors1 = [cool]
+colors1.append(warm)
+
+for e in colors1:
+    print('e =', e)
+```
+
+### Practice 2 — Combining lists
+
+```python
+cool = ['blue', 'green']
+warm = ['red', 'yellow', 'orange']
+
+flat = cool + warm
+print(flat)
+```
+
+### Practice 3 — `sort()`
+
+```python
+flat = ['yellow', 'blue', 'red', 'green']
+
+flat.sort()
+
+print(flat)
+```
+
+### Practice 4 — `sorted()`
+
+```python
+flat = ['yellow', 'blue', 'red', 'green']
+
+new_flat = sorted(flat, reverse=True)
+
+print(flat)
+print(new_flat)
+```
+
+---
+
+# Key Takeaways
+
+```text
+append()       → adds an element
+remove()       → removes a specified element
+pop()          → removes and returns the last element
+split()        → string → list
+join()         → list → string
+[:]            → creates a copy
+alias          → two names refer to the same list
++              → combines lists
+sort()         → changes original list
+sorted()       → returns a sorted list
+reverse=True   → reverse/descending order
+list[index] =  → changes an element
+```
+
+## Lecture 5 Status
+
+**COMPLETED**
+
+The remaining details of the lecture are not being expanded further for this study cycle. The priority is to retain the core list, mutation, aliasing, cloning, nested-list and sorting concepts and move forward to the next chapter.
+
+
 
 
