@@ -9077,6 +9077,353 @@ list[index] =  → changes an element
 
 The remaining details of the lecture are not being expanded further for this study cycle. The priority is to retain the core list, mutation, aliasing, cloning, nested-list and sorting concepts and move forward to the next chapter.
 
+MIT 6.0001 — Lecture 6
+Recursion & Dictionaries
+Session Progress
+
+Covered today:
+
+Recursion basics
+Recursive multiplication
+Base case and recursive case
+Recursive factorial
+Recursive function scope
+Iteration vs recursion
+Fibonacci recursion
+Introduction to dictionaries
+1. Recursion
+Core idea
+
+Recursion = solve a problem by solving a smaller version of the same problem.
+
+In Python, recursion means a function calls itself.
+
+General structure:
+
+def function(...):
+    if base_case:
+        return answer
+    else:
+        return smaller_problem
+
+A recursive solution needs:
+
+Base case → tells recursion when to stop.
+Recursive case → makes the problem smaller.
+2. Recursive Multiplication
+
+Example:
+
+5 × 4
+= 5 + (5 × 3)
+= 5 + 5 + (5 × 2)
+= 5 + 5 + 5 + (5 × 1)
+= 20
+
+MIT code:
+
+def mult(a, b):
+    if b == 1:
+        return a
+    else:
+        return a + mult(a, b-1)
+Trace
+mult(5,4)
+↓
+mult(5,3)
+↓
+mult(5,2)
+↓
+mult(5,1)
+
+At:
+
+if b == 1:
+
+the condition becomes true.
+
+Then:
+
+return a
+
+returns 5.
+
+The waiting calls then finish:
+
+mult(5,1) → 5
+mult(5,2) → 5 + 5 = 10
+mult(5,3) → 5 + 10 = 15
+mult(5,4) → 5 + 15 = 20
+Important pattern
+
+Going down:
+
+4 → 3 → 2 → 1
+
+Coming back up:
+
+1 → 2 → 3 → 4
+3. Why Base Case Is Necessary
+
+Without a base case:
+
+def fact(n):
+    return n * fact(n-1)
+
+the function would keep producing smaller calls:
+
+fact(4)
+→ fact(3)
+→ fact(2)
+→ fact(1)
+→ fact(0)
+→ fact(-1)
+→ ...
+
+There would be no stopping point.
+
+Therefore:
+
+Base case = the point where the problem is simple enough to answer directly.
+
+4. Recursive Factorial
+
+Factorial:
+
+4! = 4 × 3 × 2 × 1
+
+Recursive structure:
+
+4!
+↓
+4 × 3!
+↓
+4 × 3 × 2!
+↓
+4 × 3 × 2 × 1!
+
+MIT-style code:
+
+def fact(n):
+    if n == 1:
+        return 1
+    else:
+        return n * fact(n-1)
+
+For:
+
+fact(4)
+
+the recursive calls are:
+
+fact(4)
+→ 4 × fact(3)
+
+fact(3)
+→ 3 × fact(2)
+
+fact(2)
+→ 2 × fact(1)
+
+fact(1)
+→ 1
+
+Then the answers return upward:
+
+2 × 1 = 2
+3 × 2 = 6
+4 × 6 = 24
+
+Therefore:
+
+fact(4) = 24
+5. Recursive Function Scope
+
+Each recursive call is a separate function call with its own local variables.
+
+For example:
+
+fact(4)
+n = 4
+   ↓
+fact(3)
+n = 3
+   ↓
+fact(2)
+n = 2
+   ↓
+fact(1)
+n = 1
+
+These are not one variable n repeatedly changing.
+
+Each function call has its own scope.
+
+Key idea
+
+Every recursive call gets its own local scope.
+
+This is why the calls can return to their previous states.
+
+6. Iteration vs Recursion
+Iteration
+
+Uses loops:
+
+for
+while
+
+The loop repeatedly performs an operation.
+
+Recursion
+
+A function repeatedly calls itself with a smaller problem.
+
+Iteration → loop repeats
+
+Recursion → function calls itself
+
+Neither is automatically better.
+
+Recursion is useful when a problem naturally breaks into smaller versions of itself.
+
+7. Fibonacci Recursion
+
+Fibonacci sequence:
+
+0, 1, 1, 2, 3, 5, 8, 13...
+
+The important recursive idea:
+
+fib(n)
+→ smaller Fibonacci problems
+
+Unlike factorial, Fibonacci creates two recursive branches.
+
+Conceptually:
+
+              fib(4)
+             /      \
+         fib(3)     fib(2)
+         /   \       /   \
+     fib(2) fib(1) fib(1) fib(0)
+Important difference
+
+Factorial:
+
+fact(4)
+↓
+fact(3)
+↓
+fact(2)
+↓
+fact(1)
+
+One recursive branch.
+
+Fibonacci:
+
+fib(4)
+↙     ↘
+fib(3) fib(2)
+
+Two recursive branches.
+
+This can cause the same smaller problems to be calculated repeatedly.
+
+That repeated work is the reason the lecture later introduces dictionaries/memoization to make Fibonacci much more efficient.
+
+8. Dictionaries — Introduction
+
+A dictionary stores information using key → value pairs.
+
+Example:
+
+person = {
+    'name': 'Shivendra',
+    'age': 38
+}
+
+Structure:
+
+key       → value
+
+'name'    → 'Shivendra'
+'age'     → 38
+
+To retrieve a value:
+
+print(person['name'])
+
+Output:
+
+Shivendra
+Key difference from lists
+
+A list normally retrieves information using a position/index:
+
+items[0]
+
+A dictionary retrieves information using a key:
+
+person['name']
+Project Relevance
+
+For a long-term-memory chatbot, dictionaries are particularly important because information can naturally be represented as:
+
+memory = {
+    'preferences': ...,
+    'study_history': ...,
+    'important_facts': ...,
+    'past_topics': ...
+}
+
+The important conceptual connection from this lecture is:
+
+Store information once → retrieve it when needed.
+
+This becomes especially important later in Lecture 6 when dictionaries are used to avoid repeatedly calculating the same Fibonacci values.
+
+Lecture 6 — Current Status
+Completed
+Recursion concept
+Base case
+Recursive case
+Recursive multiplication
+Recursive factorial
+Recursive scope
+Iteration vs recursion
+Fibonacci concept
+Dictionary introduction
+Remaining
+More recursion examples
+Induction
+Towers of Hanoi
+Recursive strings / palindromes
+Divide and conquer
+Dictionary operations
+Frequency dictionaries
+Dictionary-based Fibonacci
+Memoization
+Efficiency comparison
+Next Session
+
+Start with dictionaries properly:
+
+create
+↓
+lookup
+↓
+add/update
+↓
+delete
+↓
+keys / values
+↓
+frequency dictionary
+↓
+memoization
+
 
 
 
