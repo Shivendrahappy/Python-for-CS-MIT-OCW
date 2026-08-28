@@ -9959,6 +9959,7 @@ For future MIT code:
 This is intentionally slower than simply reading the slides, but it prevents the code and concepts from slipping together.
 
 Next starting point: Frequency Dictionaries — MIT's song-lyrics example.
+l
 
 
 
