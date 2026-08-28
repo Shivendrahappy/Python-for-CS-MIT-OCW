@@ -9424,6 +9424,541 @@ frequency dictionary
 ↓
 memoization
 
+Part II — Dictionaries
+8. Why Dictionaries?
+
+Before dictionaries, MIT shows that using several separate lists can become inconvenient because related information has to remain synchronised by index.
+
+A dictionary provides a direct relationship:
+
+key → value
+
+Instead of finding information by position, we can identify it using a meaningful key.
+
+9. Topic: Creating an Empty Dictionary
+
+MIT code:
+
+my_dict = {}
+
+Complete code:
+
+my_dict = {}
+
+print(my_dict)
+
+Output:
+
+{}
+Meaning
+{}
+↓
+empty dictionary
+10. Topic: Creating a Dictionary with Key/Value Pairs
+
+MIT example:
+
+grades = {'Ana':'B', 'John':'A+', 'Denise':'A', 'Katy':'A'}
+
+Complete code:
+
+grades = {
+    'Ana': 'B',
+    'John': 'A+',
+    'Denise': 'A',
+    'Katy': 'A'
+}
+
+print(grades)
+
+Think of the dictionary as:
+
+Key       → Value
+
+Ana       → B
+John      → A+
+Denise    → A
+Katy      → A
+Important
+
+The left side is the key.
+
+The right side is the value.
+
+'John' → 'A+'
+  ↑       ↑
+ key    value
+11. Topic: Dictionary Lookup
+
+MIT code:
+
+grades['John']
+
+Complete code:
+
+grades = {
+    'Ana': 'B',
+    'John': 'A+',
+    'Denise': 'A',
+    'Katy': 'A'
+}
+
+print(grades['John'])
+
+Output:
+
+A+
+Meaning
+grades['John']
+
+asks:
+
+What value is associated with the key 'John'?
+
+It returns:
+
+A+
+12. Topic: Missing Key — KeyError
+
+Complete code:
+
+grades = {
+    'Ana': 'B',
+    'John': 'A+',
+    'Denise': 'A',
+    'Katy': 'A'
+}
+
+print(grades['Sylvan'])
+
+'Sylvan' is not currently a key.
+
+Therefore Python raises:
+
+KeyError
+Important
+existing key
+→ value returned
+
+missing key
+→ KeyError
+13. Topic: Adding a Missing Key — Sylvan
+
+This was one of the main dictionary operations practised.
+
+Complete code:
+
+grades = {
+    'Ana': 'B',
+    'John': 'A+',
+    'Denise': 'A',
+    'Katy': 'A'
+}
+
+grades['Sylvan'] = 'A'
+
+print(grades)
+print(grades['Sylvan'])
+
+Before:
+
+Ana    → B
+John   → A+
+Denise → A
+Katy   → A
+
+After:
+
+Ana    → B
+John   → A+
+Denise → A
+Katy   → A
+Sylvan → A
+Meaning
+grades['Sylvan'] = 'A'
+
+means:
+
+Put the value 'A' under the key 'Sylvan'.
+
+Because Sylvan didn't exist before, this adds a new key/value pair.
+
+Memory rule
+
+Missing key + = → ADD
+
+14. Topic: Difference Between List and Dictionary
+
+A list uses an index.
+
+Example:
+
+cool = ['blue', 'green']
+
+print(cool[0])
+
+Here:
+
+0
+↓
+index/position
+↓
+blue
+
+A dictionary uses a key:
+
+grades = {
+    'Ana': 'B',
+    'John': 'A+',
+    'Denise': 'A',
+    'Katy': 'A'
+}
+
+print(grades['John'])
+
+Here:
+
+'John'
+↓
+key
+↓
+A+
+Main difference
+LIST
+
+index → value
+
+
+DICTIONARY
+
+key → value
+
+So:
+
+cool[0]
+
+means:
+
+Give me the item at position 0.
+
+While:
+
+grades['John']
+
+means:
+
+Give me the value associated with key 'John'.
+
+15. Topic: Updating an Existing Key — John
+
+Complete code:
+
+grades = {
+    'Ana': 'B',
+    'John': 'A+',
+    'Denise': 'A',
+    'Katy': 'A'
+}
+
+grades['John'] = 'B'
+
+print(grades)
+print(grades['John'])
+
+Before:
+
+John → A+
+
+After:
+
+John → B
+
+We did not create another John.
+
+We changed John's existing value.
+
+Memory rule
+Missing key + =
+→ ADD
+
+Existing key + =
+→ UPDATE
+16. Topic: Checking Whether a Key Exists — in
+
+Complete code:
+
+grades = {
+    'Ana': 'B',
+    'John': 'A+',
+    'Denise': 'A',
+    'Katy': 'A'
+}
+
+print('John' in grades)
+print('Alex' in grades)
+
+Output:
+
+True
+False
+Meaning
+'John' in grades
+
+asks:
+
+Does the key 'John' exist in the dictionary?
+
+It does, so:
+
+True
+
+But:
+
+'Alex' in grades
+
+asks:
+
+Does the key 'Alex' exist?
+
+It doesn't, so:
+
+False
+Important difference
+grades['John']
+
+means:
+
+What is John's value?
+
+Result:
+
+A+
+
+While:
+
+'John' in grades
+
+means:
+
+Does the key John exist?
+
+Result:
+
+True
+
+So:
+
+grades['John']     → GET VALUE
+
+'John' in grades   → CHECK KEY
+17. Topic: Deleting a Key — Ana
+
+Complete code:
+
+grades = {
+    'Ana': 'B',
+    'John': 'A+',
+    'Denise': 'A',
+    'Katy': 'A'
+}
+
+del(grades['Ana'])
+
+print(grades)
+
+Before:
+
+Ana    → B
+John   → A+
+Denise → A
+Katy   → A
+
+After:
+
+John   → A+
+Denise → A
+Katy   → A
+Meaning
+del(grades['Ana'])
+
+means:
+
+Remove the key 'Ana' and its associated value.
+
+Memory rule
+del(...)
+→ DELETE
+18. Topic: Getting All Keys — keys()
+
+Complete code:
+
+grades = {
+    'Ana': 'B',
+    'John': 'A+',
+    'Denise': 'A',
+    'Katy': 'A'
+}
+
+print(grades.keys())
+
+keys() gives access to the dictionary's keys.
+
+Conceptually:
+
+Ana
+John
+Denise
+Katy
+Memory rule
+grades.keys()
+
+→ keys
+
+19. Topic: Getting All Values — values()
+
+Complete code:
+
+grades = {
+    'Ana': 'B',
+    'John': 'A+',
+    'Denise': 'A',
+    'Katy': 'A'
+}
+
+print(grades.values())
+
+values() gives access to the dictionary's values.
+
+Conceptually:
+
+B
+A+
+A
+A
+
+Notice that values can repeat:
+
+Denise → A
+Katy   → A
+
+That's allowed.
+
+20. Topic: Keys vs Values
+Keys
+
+Keys must be:
+
+unique
+immutable/hashable
+
+Example:
+
+'John'
+Values
+
+Values:
+
+can repeat
+can be different types
+
+The important mental model is:
+
+KEY
+↓
+identifies something
+
+VALUE
+↓
+information stored for that key
+21. Topic: List vs Dictionary — Final Comparison
+LIST
+
+index → value
+
+Example:
+
+cool[0]
+DICTIONARY
+
+key → value
+
+Example:
+
+grades['John']
+Remember
+
+List → position
+
+Dictionary → key
+
+Current Lecture 6 Progress
+Completed
+Recursion
+Recursive multiplication
+Base case
+Recursive case
+Recursive factorial
+Recursive function scope
+Iteration vs recursion
+Fibonacci recursion
+Repeated work in Fibonacci
+Dictionaries
+Why dictionaries are useful
+Creating an empty dictionary
+Creating key/value pairs
+Dictionary lookup
+Missing key / KeyError
+Adding a missing key
+List vs dictionary
+Updating an existing key
+Checking a key with in
+Deleting a key
+keys()
+values()
+Keys vs values
+Remaining Lecture 6 — Next Session
+
+The next major section is:
+
+Example: 3 Functions to Analyze Song Lyrics
+
+This introduces the frequency dictionary idea.
+
+The important progression will be:
+
+Dictionary basics
+       ↓
+Frequency dictionary
+       ↓
+Count occurrences
+       ↓
+Use dictionary to analyse data
+       ↓
+Fibonacci + dictionary
+       ↓
+Remember previous results
+       ↓
+Memoization / efficiency
+
+The frequency-dictionary section is the next major application of what we have learned.
+
+Study Method Established
+
+For future MIT code:
+
+1. Clear MIT topic heading
+
+2. One complete standalone Colab code
+
+3. Explain that code
+
+4. Type/practise in Colab
+
+5. Write only the important concept/rule in the notebook
+
+This is intentionally slower than simply reading the slides, but it prevents the code and concepts from slipping together.
+
+Next starting point: Frequency Dictionaries — MIT's song-lyrics example.
 
 
 
